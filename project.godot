@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Sunflower Valley"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://Ivo/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneTransition="*res://Ivo/scene_transition.tscn"
 
 [display]
 

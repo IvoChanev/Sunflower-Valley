@@ -19,4 +19,4 @@ func _on_sprite_clicked():
 	# Change the texture when clicked
 	if new_texture:
 		texture = new_texture
-		SceneTransition.change_scene("res://credits.tscn")
+		SceneTransition.change_scene("res://Ivo/credits.tscn")
