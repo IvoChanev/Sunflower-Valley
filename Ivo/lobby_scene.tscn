@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bimhd48ibfvr0"]
+
+[ext_resource type="Texture2D" uid="uid://coehgm5lk4hi1" path="res://Ivo/Sprites/PlayScene_BG.png" id="1_hn1h6"]
+[ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="3_ouxyj"]
+[ext_resource type="Script" path="res://Ivo/button_back.gd" id="4_3v75n"]
+[ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="5_k5l3v"]
+[ext_resource type="Texture2D" uid="uid://cxfh1y4jtoxyu" path="res://Ivo/Sprites/Buttons/Button_Next.png" id="5_x646p"]
+[ext_resource type="Script" path="res://Ivo/button_next.gd" id="6_xec15"]
+[ext_resource type="Texture2D" uid="uid://ddwgm2optge6j" path="res://Ivo/Sprites/Buttons/Button_Next_Pressed.png" id="7_3girc"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PhoneMenuBG" type="Sprite2D" parent="MarginContainer"]
+texture_repeat = 2
+position = Vector2(360, 640)
+scale = Vector2(10, 10)
+texture = ExtResource("1_hn1h6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(3.81468e-06, -328)
+scale = Vector2(10, 10)
+texture = ExtResource("3_ouxyj")
+script = ExtResource("4_3v75n")
+new_texture = ExtResource("5_k5l3v")
+
+[node name="ButtonNext" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(3.81468e-06, -136)
+scale = Vector2(10, 10)
+texture = ExtResource("5_x646p")
+script = ExtResource("6_xec15")
+new_texture = ExtResource("7_3girc")
