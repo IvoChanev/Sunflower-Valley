@@ -25,8 +25,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrke3"]
-radius = 25.0
-height = 110.0
+radius = 51.0
+height = 238.0
 
 [node name="Client" type="Node2D"]
 script = ExtResource("1_i2sfa")

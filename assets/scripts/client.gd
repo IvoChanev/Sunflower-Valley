@@ -16,6 +16,7 @@ func assign_plant_and_disease():
 		{"plant" : "Corn", "disease": ["Ants", "Aphids"]},
 		{"plant" : "Lettuce", "disease": ["Spiders", "Ants"]}
 	]
+	
 	#Randomly select a plant dictionary, extract the type, and choose a random possible disease
 	var selected_plant = plant_data[randi() % plant_data.size()]
 	plant_type = selected_plant["plant"]
@@ -25,7 +26,7 @@ func assign_plant_and_disease():
 	
 	#Call the custom method after instantiating the plannt into the scene
 	plant = preload("res://scenes/plant.tscn").instantiate()
-	add_child(plant)
+	get_parent().add_child(plant)
 	plant.set_plant_data(plant_type, disease)
 
 #Area2D handles input interactions
