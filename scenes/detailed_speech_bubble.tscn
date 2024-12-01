@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dqmlydkli7sih"]
+
+[node name="DetailedSpeechBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="DetailedSpeechBubbleText" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Detailed Speech Bubble"
