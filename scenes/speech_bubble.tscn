@@ -6,7 +6,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Text" type="Label" parent="."]
+[node name="SpeechBubbleText" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+text = "Speech bubble spawned!"

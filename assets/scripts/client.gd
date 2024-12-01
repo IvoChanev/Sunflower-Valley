@@ -3,6 +3,9 @@ extends Node2D
 var plant: Node2D = null
 var plant_type: String = ""
 var disease: String = ""
+var speech_bubble_spawned: bool = false
+
+@onready var speech_bubble_scene = preload("res://scenes/speech_bubble.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,9 +36,15 @@ func assign_plant_and_disease():
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventScreenTouch and event.pressed:
 		print("Client interacted with!")
-		interact()
 		
-#What happens after the client is tapped on		
-func interact():
-		print("Interacting with the client...")
-		#$AnimatedSprite2D.animation = "walk_back"
+		if not speech_bubble_spawned:
+			spawn_speech_bubble()
+		
+# Spawn the speech bubble		
+func spawn_speech_bubble():
+	var speech_bubble = speech_bubble_scene.instantiate()
+	add_child(speech_bubble)
+	
+	print("Displaying speech bubble for plant: " + plant_type + " with disease: " + disease)
+	
+	speech_bubble_spawned = true
