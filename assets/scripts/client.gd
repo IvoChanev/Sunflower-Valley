@@ -21,6 +21,8 @@ func assign_plant_and_disease():
 	plant_type = selected_plant["plant"]
 	disease = selected_plant["disease"][randi() % selected_plant["disease"].size()]
 	
+	print("Selected plant: " + plant_type + ", Disease: " + disease)
+	
 	#Call the custom method after instantiating the plannt into the scene
 	plant = preload("res://scenes/plant.tscn").instantiate()
 	add_child(plant)
