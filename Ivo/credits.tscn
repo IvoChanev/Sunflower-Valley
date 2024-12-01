@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://itnrr73i8ies"]
+
+[ext_resource type="Shader" path="res://Ivo/scroll.gdshader" id="1_cltq6"]
+[ext_resource type="Texture2D" uid="uid://3bp7s10a1356" path="res://Ivo/Sprites/Phone_Menu_BG.png" id="2_f1400"]
+[ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="3_y47a5"]
+[ext_resource type="Script" path="res://Ivo/button_back.gd" id="4_q7g2i"]
+[ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="5_5bl85"]
+[ext_resource type="Texture2D" uid="uid://rxuw2m0kupg6" path="res://Ivo/Sprites/credits.png" id="6_8hkna"]
+[ext_resource type="Script" path="res://Ivo/up_and_down.gd" id="7_vavpm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dusf"]
+shader = ExtResource("1_cltq6")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed = 0.2
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PhoneMenuBG" type="Sprite2D" parent="MarginContainer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5dusf")
+position = Vector2(360, 640)
+scale = Vector2(11.25, 10)
+texture = ExtResource("2_f1400")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(3.81468e-06, 528)
+scale = Vector2(10, 10)
+texture = ExtResource("3_y47a5")
+script = ExtResource("4_q7g2i")
+new_texture = ExtResource("5_5bl85")
+
+[node name="Credits" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(360, 592)
+scale = Vector2(1.63248, 1.63248)
+texture = ExtResource("6_8hkna")
+script = ExtResource("7_vavpm")

@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd6sqa04vg2vy"]
+
+[ext_resource type="Script" path="res://Ivo/scene_transition.gd" id="1_74gd5"]
+[ext_resource type="Texture2D" uid="uid://cr8nw1ly2xg7o" path="res://Ivo/Sprites/Transition1.png" id="2_mc46n"]
+
+[sub_resource type="Animation" id="Animation_epfn8"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-768, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition1:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_bnoyv"]
+resource_name = "dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1480, 640), Vector2(176, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition1:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(10, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0kate"]
+_data = {
+"RESET": SubResource("Animation_epfn8"),
+"dissolve": SubResource("Animation_bnoyv")
+}
+
+[node name="SceneTransition" type="CanvasLayer"]
+script = ExtResource("1_74gd5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0kate")
+}
+
+[node name="Transition1" type="Sprite2D" parent="."]
+position = Vector2(-768, 640)
+scale = Vector2(-10, -10)
+texture = ExtResource("2_mc46n")

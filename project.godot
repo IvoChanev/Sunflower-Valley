@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="Sunflower Valley"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://Ivo/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneTransition="*res://Ivo/scene_transition.tscn"
+
 [display]
 
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/mode=3
 window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [input_devices]
 
@@ -25,4 +33,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+
