@@ -10,6 +10,7 @@ offset_top = 99.0
 offset_right = 362.0
 offset_bottom = 139.0
 script = ExtResource("1_gavjt")
+metadata/_edit_group_ = true
 
 [node name="PlantSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
