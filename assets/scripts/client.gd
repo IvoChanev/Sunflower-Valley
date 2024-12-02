@@ -28,17 +28,16 @@ func assign_plant_and_disease():
 		{"plant" : "Lettuce", "disease": ["Spiders", "Ants"]}
 	]
 	
-	# Randomly select a plant dictionary, extract the type, and choose a random possible disease
-	var selected_plant = plant_data[randi() % plant_data.size()]
-	plant_type = selected_plant["plant"]
-	disease = selected_plant["disease"][randi() % selected_plant["disease"].size()]
+	var selected_plant = plant_data[randi() % plant_data.size()] # Randomizer 
+	plant_type = selected_plant["plant"] # Extract plant type
+	disease = selected_plant["disease"][randi() % selected_plant["disease"].size()] # Extract possible disease
 	
-	print("Selected plant: " + plant_type + ", Disease: " + disease)
+	print("Selected plant: " + plant_type + ", Disease: " + disease) 
 	
 	#Call the custom method after instantiating the plannt into the scene
 	plant = plant_scene.instantiate()
 	get_parent().add_child(plant)
-	plant.set_plant_data(plant_type, disease)
+	plant.set_plant_data(plant_type, disease) # Set the corresponding sprite to the chosen combo
 	plant_assigned = true
 
 # Area2D handles input interactions

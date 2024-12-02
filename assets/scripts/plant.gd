@@ -13,6 +13,7 @@ var plant_disease_sprites = {
 # This node contains the sprites
 @onready var sprite_node = $Sprite2D
 
+# Communicate the picked plant and disease
 func set_plant_data(plant: String, disease: String):
 		#Store plant data
 		plant_type = plant
@@ -20,10 +21,9 @@ func set_plant_data(plant: String, disease: String):
 		
 		print("Plant: " + plant_type + ", Disease: " + disease)
 		
-		# Set the sprite based on the key from the dictionary
-		var sprite_key = plant_type + "_" + disease	
-		if plant_disease_sprites.has(sprite_key):
-			set_sprite(plant_disease_sprites[sprite_key])
+		var sprite_key = plant_type + "_" + disease	# Combina plant and disease into a key
+		if plant_disease_sprites.has(sprite_key): # Checking key existence
+			set_sprite(plant_disease_sprites[sprite_key]) # Retrieve the key's value and set the sprite
 		else:
 			print("No sprite found for the combo: " + sprite_key)
 			
