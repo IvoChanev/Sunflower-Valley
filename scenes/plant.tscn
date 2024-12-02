@@ -6,8 +6,4 @@
 script = ExtResource("1_0nd0k")
 metadata/_edit_group_ = true
 
-[node name="Sprite" type="Sprite2D" parent="."]
-
-[node name="Disease" type="Node2D" parent="."]
-
-[node name="Sprite" type="Sprite2D" parent="Disease"]
+[node name="Sprite2D" type="Sprite2D" parent="."]

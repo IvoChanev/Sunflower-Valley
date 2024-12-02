@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf0t7myv1cxfb"
-path="res://.godot/imported/tomato.PNG-cfd80d880b765846cf265d7c1697c6a0.ctex"
+uid="uid://cyffw4wu0svay"
+path="res://.godot/imported/tomato_spiders.PNG-5e5fc619ca5e6dcd12c10e0cb2e37688.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/plants/tomato.PNG"
-dest_files=["res://.godot/imported/tomato.PNG-cfd80d880b765846cf265d7c1697c6a0.ctex"]
+source_file="res://assets/art/disease/tomato_spiders.PNG"
+dest_files=["res://.godot/imported/tomato_spiders.PNG-5e5fc619ca5e6dcd12c10e0cb2e37688.ctex"]
 
 [params]
 

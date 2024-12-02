@@ -1,11 +1,15 @@
 extends Node2D
 
 var plant: Node2D = null
+
 var plant_type: String = ""
 var disease: String = ""
+
 var speech_bubble_spawned: bool = false
+var plant_assigned: bool = false
 
 @onready var speech_bubble_scene = preload("res://scenes/speech_bubble.tscn")
+@onready var plant_scene = preload("res://scenes/plant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +17,10 @@ func _ready():
 	assign_plant_and_disease()	
 
 func assign_plant_and_disease():
+	# Check if a plant was already spawned
+	if plant_assigned:
+		return
+	
 	#List of dictionaries defining possible plants and their associated diseases
 	var plant_data = [
 		{"plant" : "Tomato", "disease": ["Spiders", "Aphids"]},
@@ -20,7 +28,7 @@ func assign_plant_and_disease():
 		{"plant" : "Lettuce", "disease": ["Spiders", "Ants"]}
 	]
 	
-	#Randomly select a plant dictionary, extract the type, and choose a random possible disease
+	# Randomly select a plant dictionary, extract the type, and choose a random possible disease
 	var selected_plant = plant_data[randi() % plant_data.size()]
 	plant_type = selected_plant["plant"]
 	disease = selected_plant["disease"][randi() % selected_plant["disease"].size()]
@@ -28,11 +36,12 @@ func assign_plant_and_disease():
 	print("Selected plant: " + plant_type + ", Disease: " + disease)
 	
 	#Call the custom method after instantiating the plannt into the scene
-	plant = preload("res://scenes/plant.tscn").instantiate()
+	plant = plant_scene.instantiate()
 	get_parent().add_child(plant)
 	plant.set_plant_data(plant_type, disease)
+	plant_assigned = true
 
-#Area2D handles input interactions
+# Area2D handles input interactions
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventScreenTouch and event.pressed:
 		print("Client interacted with!")
