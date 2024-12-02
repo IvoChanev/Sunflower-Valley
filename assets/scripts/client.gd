@@ -24,8 +24,6 @@ func assign_plant_and_disease():
 	#List of dictionaries defining possible plants and their associated diseases
 	var plant_data = [
 		{"plant" : "Tomato", "disease": ["Spiders", "Aphids"]},
-		{"plant" : "Corn", "disease": ["Ants", "Aphids"]},
-		{"plant" : "Lettuce", "disease": ["Spiders", "Ants"]}
 	]
 	
 	var selected_plant = plant_data[randi() % plant_data.size()] # Randomizer 
@@ -48,10 +46,13 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		if not speech_bubble_spawned:
 			spawn_speech_bubble()
 		
-# Spawn the speech bubble		
+# Spawn the speech bubble with the correct sprite		
 func spawn_speech_bubble():
 	var speech_bubble = speech_bubble_scene.instantiate()
 	add_child(speech_bubble)
+	
+	#Pass the data to the speech bubble
+	speech_bubble.set_speech_bubble_data(plant_type, disease)
 	
 	print("Displaying speech bubble for plant: " + plant_type + " with disease: " + disease)
 	

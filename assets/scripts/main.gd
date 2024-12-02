@@ -10,7 +10,3 @@ func spawn_client():
 	var client = client_scene.instantiate()
 	client.position = Vector2(100, 200)
 	add_child(client)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
