@@ -1,15 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqmlydkli7sih"]
 
-[ext_resource type="Script" path="res://scenes/detailed_speech_bubble.gd" id="1_yedot"]
+[ext_resource type="Script" path="res://assets/scripts/detailed_speech_bubble.gd" id="1_yedot"]
 
 [node name="DetailedSpeechBubble" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 337.0
-offset_top = 176.0
-offset_right = 337.0
-offset_bottom = 176.0
+offset_left = 274.0
+offset_top = 159.0
+offset_right = 274.0
+offset_bottom = 159.0
 script = ExtResource("1_yedot")
+metadata/_edit_group_ = true
 
 [node name="DiseaseSprite" type="Sprite2D" parent="."]
 

@@ -37,20 +37,3 @@ func set_speech_bubble_data(plant: String, disease: String) -> void:
 # Handle the info button press
 func _on_information_button_pressed() -> void:
 	print("Info button pressed!")
-	
-	# Pass the plant and disease to the detailed speech bubble
-	detailed_speech_bubble(plant_type, disease)
-
-# Function to spawn the detailed speech bubble
-func detailed_speech_bubble(plant: String, disease: String):
-	print("Detailed Speech Bubble Spawned")
-	var detailed_speech_bubble = detailed_speech_bubble_scene.instantiate()
-	
-	# Pass the plant and disease to the detailed speech bubble
-	#detailed_speech_bubble.set_detailed_bubble_data(plant, disease)
-	
-	# Add the detailed speech bubble to the parent
-	get_parent().add_child(detailed_speech_bubble)
-	
-	# Remove the original speech bubble
-	original_speech_bubble.queue_free()
