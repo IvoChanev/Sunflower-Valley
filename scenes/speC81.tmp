@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1jpwoyyvjt5u"]
+
+[ext_resource type="Script" path="res://assets/scripts/speech_bubble.gd" id="1_gavjt"]
+
+[node name="SpeechBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 322.0
+offset_top = 99.0
+offset_right = 362.0
+offset_bottom = 139.0
+script = ExtResource("1_gavjt")
+metadata/_edit_group_ = true
+
+[node name="PlantSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+
+[node name="SpeechBubbleText" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Speech bubble spawned!"
+
+[node name="InformationButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = -16.0
+offset_right = 216.0
+offset_bottom = 5.0
+
+[connection signal="pressed" from="InformationButton" to="." method="_on_information_button_pressed"]

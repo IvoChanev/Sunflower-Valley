@@ -1,5 +1,7 @@
 extends Control
 
+signal info_button_pressed
+
 # References
 @onready var info_button = $InformationButton
 @onready var plant_sprite = $PlantSprite
@@ -34,6 +36,6 @@ func set_speech_bubble_data(plant: String, disease: String) -> void:
 	else:
 		print("No sprite found for plant: %s, disease: %s" % [plant, disease])
 
-# Handle the info button press
 func _on_information_button_pressed() -> void:
-	print("Info button pressed!")
+	print("Info button pressed in speech bubble!")
+	emit_signal("info_button_pressed")

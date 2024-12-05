@@ -1,21 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqmlydkli7sih"]
+[gd_scene load_steps=2 format=3 uid="uid://dieojx6ewsvto"]
 
-[ext_resource type="Script" path="res://assets/scripts/detailed_speech_bubble.gd" id="1_yedot"]
+[ext_resource type="Script" path="res://assets/scripts/detailed_speech_bubble.gd" id="1_voi82"]
 
 [node name="DetailedSpeechBubble" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 274.0
-offset_top = 159.0
-offset_right = 274.0
-offset_bottom = 159.0
-script = ExtResource("1_yedot")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_voi82")
 metadata/_edit_group_ = true
 
-[node name="DiseaseSprite" type="Sprite2D" parent="."]
-
-[node name="DetailedSpeechBubbleText" type="Label" parent="."]
+[node name="DiseaseText" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Detailed Speech Bubble"
+text = "im spawned now"
+
+[node name="DiseaseSprite" type="Sprite2D" parent="."]
