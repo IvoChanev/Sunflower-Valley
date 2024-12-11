@@ -1,7 +1,5 @@
 extends Node
 
-var plant_spawned: bool = false
- 
 # Centralized data storage
 var plant_data = {
 	"Tomato": {
@@ -16,23 +14,22 @@ var plant_data = {
 		}
 	}
 }
+	
+var current_plant_and_disease = null
 
-func set_plant_spawned_state(state: bool) -> void:
-	plant_spawned = state
-	
-func is_plant_spawned() -> bool:
-	return plant_spawned
-	
-# Get a random plant and disease combination
 func get_random_plant_and_disease() -> Dictionary:
-	var plants = plant_data.keys()
-	var random_plant = plants[randi() % plants.size()]
-	var diseases = plant_data[random_plant]["diseases"]
-	var random_disease = diseases[randi() % diseases.size()]
-	return {
-		"plant": random_plant,
-		"disease": random_disease
-	}
+	if current_plant_and_disease == null:
+		# Generate random plant and disease if not set
+		var plants = plant_data.keys()
+		var random_plant = plants[randi() % plants.size()]
+		var diseases = plant_data[random_plant]["diseases"]
+		var random_disease = diseases[randi() % diseases.size()]
+		current_plant_and_disease = {
+			"plant": random_plant,
+			"disease": random_disease
+		}
+	# Return the plant and disease dictionary
+	return current_plant_and_disease
 
 # Get sprite path for a plant-disease combination
 func get_sprite(plant: String, disease: String) -> String:
