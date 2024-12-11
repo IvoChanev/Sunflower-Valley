@@ -1,6 +1,7 @@
 extends Node
 
 # Centralized data storage
+# Dictionaly holding all the information about plants & diseases and their paths.
 var plant_data = {
 	"Tomato": {
 		"diseases": ["Spiders", "Aphids"],
@@ -17,6 +18,7 @@ var plant_data = {
 	
 var current_plant_and_disease = null
 
+#Chose a random plant and a random disease
 func get_random_plant_and_disease() -> Dictionary:
 	if current_plant_and_disease == null:
 		# Generate random plant and disease if not set

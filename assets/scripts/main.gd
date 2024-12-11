@@ -6,6 +6,7 @@ extends Node
 func _ready() :
 	spawn_client()
 
+# Instantiate the client scene
 func spawn_client():
 	var client = client_scene.instantiate()
 	client.position = Vector2(100, 200)

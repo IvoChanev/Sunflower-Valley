@@ -1,10 +1,13 @@
 extends Node2D
 
+# Plant's visuals manager
+
 var plant_type: String = ""
 var disease: String = ""
 
 @onready var sprite_node = $Sprite2D
 
+# Retrieve the correct sprite from the PlantManager
 func set_plant_data(plant: String, disease: String):
 	plant_type = plant
 	self.disease = disease  # Store the plant and disease
@@ -17,6 +20,7 @@ func set_plant_data(plant: String, disease: String):
 	else:
 		print("No sprite found for the combo: " + plant_type + "_" + disease)
 
+# Load the sprite and apply it
 func set_sprite(sprite_path: String):
 	var texture = load(sprite_path)
 	if texture:
