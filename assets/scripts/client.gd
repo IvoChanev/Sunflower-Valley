@@ -12,6 +12,11 @@ var speech_bubble_spawned: bool = false
 func _ready():
 	$AnimatedSprite2D.animation = "walk_forward"
 	assign_plant_and_disease()
+	
+	# Check if plant has been moved to the Inspection Room
+	if PlantManager.is_plant_in_inspection_room:
+		# Hide the plant in the Main scene
+		hide_plant()
 
 # Retrieve the data from the PlantManager 
 # Assign a plant to the client
@@ -25,6 +30,10 @@ func assign_plant_and_disease():
 	get_parent().add_child(plant)
 	plant.set_plant_data(plant_type, disease)
 
+func hide_plant():
+	if plant:
+		plant.visible = false
+		
 # Client interaction
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventScreenTouch and event.pressed and not speech_bubble_spawned:

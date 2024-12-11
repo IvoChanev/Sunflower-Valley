@@ -19,5 +19,8 @@ func _ready():
 		plant.position = Vector2(300, 300)  # Adjust position as needed
 		plant.set_plant_data(plant_type, disease)  # Set the plant's data
 		
+		# Mark the plant as moved to the Inspection Room
+		PlantManager.plant_moved_to_inspection_room()
+		
 func _on_move_to_main_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
