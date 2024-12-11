@@ -4,3 +4,19 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e6bmv")
+
+[node name="MoveToClinic" type="Button" parent="."]
+offset_left = 552.0
+offset_top = 999.0
+offset_right = 652.0
+offset_bottom = 1030.0
+text = "Go to: Clinic"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 315.0
+offset_top = 72.0
+offset_right = 362.0
+offset_bottom = 95.0
+text = "Currently in: Main"
+
+[connection signal="pressed" from="MoveToClinic" to="." method="_on_move_to_clinic_pressed"]

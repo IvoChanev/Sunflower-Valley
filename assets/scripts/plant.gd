@@ -1,38 +1,25 @@
 extends Node2D
 
-# Hold the data for the plant and its assigned disease
 var plant_type: String = ""
 var disease: String = ""
 
-# Dictionary which maps all plant-disease combinations
-var plant_disease_sprites = {
-	"Tomato_Spiders": "res://assets/art/disease/tomato_spiders.PNG",
-	"Tomato_Aphids": "res://assets/art/disease/tomato_aphids.PNG" 
-}
-
-# This node contains the sprites
 @onready var sprite_node = $Sprite2D
 
-# Communicate the picked plant and disease
 func set_plant_data(plant: String, disease: String):
-		#Store plant data
-		plant_type = plant
-		disease = disease
-		
-		print("Plant: " + plant_type + ", Disease: " + disease)
-		
-		var sprite_key = plant_type + "_" + disease	# Combina plant and disease into a key
-		if plant_disease_sprites.has(sprite_key): # Checking key existence
-			set_sprite(plant_disease_sprites[sprite_key]) # Retrieve the key's value and set the sprite
-		else:
-			print("No sprite found for the combo: " + sprite_key)
-			
-# Set the sprite based on the plant-disease combo
+	plant_type = plant
+	self.disease = disease  # Store the plant and disease
+	
+	# Instead of using a local dictionary, fetch the sprite path from PlantManager
+	var sprite_path = PlantManager.get_sprite(plant_type, disease)
+	
+	if sprite_path != "":
+		set_sprite(sprite_path)  # Set the sprite from PlantManager
+	else:
+		print("No sprite found for the combo: " + plant_type + "_" + disease)
+
 func set_sprite(sprite_path: String):
 	var texture = load(sprite_path)
 	if texture:
-		sprite_node.texture = texture
-		
-		print("Set sprite for plant-disease combo: " + sprite_path)
+		sprite_node.texture = texture  # Apply the sprite to the sprite node
 	else:
 		print("Failed to load sprite: " + sprite_path)

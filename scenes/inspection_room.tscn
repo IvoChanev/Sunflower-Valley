@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://vbeytbbc4sbc"]
+
+[ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
+
+[node name="InspectionRoom" type="Node"]
+script = ExtResource("1_46b5i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 318.0
+offset_top = 60.0
+offset_right = 360.0
+offset_bottom = 83.0
+text = "Clinic"
+
+[node name="MoveToMain" type="Button" parent="."]
+offset_left = 568.0
+offset_top = 804.0
+offset_right = 665.0
+offset_bottom = 835.0
+text = "Go to: Main"
+
+[connection signal="pressed" from="MoveToMain" to="." method="_on_move_to_main_pressed"]
