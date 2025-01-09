@@ -9,9 +9,6 @@ var plant_type: String = ""
 var disease: String = ""
 
 func _ready():
-	# Use default values for testing
-	plant_type = "Tomato"
-	disease = "Spiders"
 	set_speech_bubble_data(plant_type, disease)
 
 func set_speech_bubble_data(plant: String, disease: String):

@@ -19,4 +19,28 @@ offset_right = 665.0
 offset_bottom = 835.0
 text = "Go to: Main"
 
+[node name="KillButton" type="Button" parent="."]
+offset_left = 571.0
+offset_top = 898.0
+offset_right = 647.0
+offset_bottom = 929.0
+text = "Kill Plant"
+
+[node name="HealButton" type="Button" parent="."]
+offset_left = 569.0
+offset_top = 943.0
+offset_right = 657.0
+offset_bottom = 974.0
+text = "Heal Plant"
+
+[node name="EndDayButton" type="Button" parent="."]
+offset_left = 570.0
+offset_top = 1067.0
+offset_right = 641.0
+offset_bottom = 1098.0
+text = "End Day"
+
 [connection signal="pressed" from="MoveToMain" to="." method="_on_move_to_main_pressed"]
+[connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
+[connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="EndDayButton" to="." method="_on_end_day_button_pressed"]

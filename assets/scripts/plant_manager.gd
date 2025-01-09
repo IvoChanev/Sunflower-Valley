@@ -2,6 +2,7 @@ extends Node
 
 # Centralized data storage
 # Dictionary holding all the information about plants & diseases and their paths.
+# Used for the speech bubble
 var plant_data = {
 	"onion": {
 		"diseases": ["spiders", "flies", "worms"],
@@ -14,12 +15,22 @@ var plant_data = {
 			"spiders": "res://assets/art/disease/onion/spiders_detail.png",
 			"worms": "res://assets/art/disease/onion/worms_detail.png",
 			"flies": "res://assets/art/disease/onion/flies_detail.png"
-		}
+		},
+		"healthy" : "res://assets/art/plants/onion/onion_happy.png",
+		"dead" : "res://assets/art/plants/onion/onion_dead.png"
 	}
 }
 	
 var current_plant_and_disease = null # Track if plant was already spawned
 var is_plant_in_inspection_room = false  # Track if plant is in Inspection Room
+
+var healed_plants_count: int = 0
+var killed_plants_count: int = 0
+
+#Reset counters for a new day
+func reset_counters():
+	healed_plants_count = 0
+	killed_plants_count = 0
 
 #Choose a random plant and a random disease
 func get_random_plant_and_disease() -> Dictionary:
@@ -52,6 +63,18 @@ func get_animation_frames(plant: String, disease: String) -> Array:
 func get_detailed_sprite(plant: String, disease: String) -> String:
 	if plant_data.has(plant) and plant_data[plant]["detailed_sprites"].has(disease):
 		return plant_data[plant]["detailed_sprites"][disease]
+	return ""
+
+# Get the healthy sprite ready	
+func get_healthy_sprite(plant: String) -> String:
+	if plant_data.has(plant) and plant_data[plant].has("healthy"):
+		return plant_data[plant]["healthy"]
+	return ""
+
+# Get the dead sprite ready	
+func get_dead_sprite(plant: String) -> String:
+	if plant_data.has(plant) and plant_data[plant].has("dead"):
+		return plant_data[plant]["dead"]
 	return ""
 
 # The Inspection room was opened
