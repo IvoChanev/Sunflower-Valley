@@ -1,29 +1,18 @@
 extends Node2D
 
-# Plant's visuals manager
-
 var plant_type: String = ""
 var disease: String = ""
 
-@onready var sprite_node = $Sprite2D
+@onready var animated_sprite = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node
 
-# Retrieve the correct sprite from the PlantManager
+# Set the plant data and select the correct animation
 func set_plant_data(plant: String, disease: String):
 	plant_type = plant
-	self.disease = disease  # Store the plant and disease
+	self.disease = disease  # Store plant and disease
 	
-	# Instead of using a local dictionary, fetch the sprite path from PlantManager
-	var sprite_path = PlantManager.get_sprite(plant_type, disease)
+	var animation_name = "%s_%s" % [plant_type, disease]  # Construct the animation name
 	
-	if sprite_path != "":
-		set_sprite(sprite_path)  # Set the sprite from PlantManager
+	if animation_name in animated_sprite.sprite_frames.get_animation_names():
+		animated_sprite.play(animation_name)  # Play the matching animation
 	else:
-		print("No sprite found for the combo: " + plant_type + "_" + disease)
-
-# Load the sprite and apply it
-func set_sprite(sprite_path: String):
-	var texture = load(sprite_path)
-	if texture:
-		sprite_node.texture = texture  # Apply the sprite to the sprite node
-	else:
-		print("Failed to load sprite: " + sprite_path)
+		print("Animation not found for: %s" % animation_name)

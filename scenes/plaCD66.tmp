@@ -63,7 +63,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
-animation = &"onion_flies"
+animation = &"onion_worms"
+frame_progress = 0.593221
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
