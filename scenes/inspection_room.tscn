@@ -1,9 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=6 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
+[ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
+
+[sub_resource type="Animation" id="Animation_3aog7"]
+resource_name = "move_down"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(359, -806), Vector2(359, -334.74), Vector2(359, 220.126), Vector2(359, 518.18)]
+}
+
+[sub_resource type="Animation" id="Animation_ogdor"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(359, -806)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fgtc"]
+_data = {
+"RESET": SubResource("Animation_ogdor"),
+"move_down": SubResource("Animation_3aog7")
+}
 
 [node name="InspectionRoom" type="Node"]
 script = ExtResource("1_46b5i")
+
+[node name="Blinders" type="Sprite2D" parent="."]
+position = Vector2(359, -806)
+texture = ExtResource("2_buehu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blinders"]
+libraries = {
+"": SubResource("AnimationLibrary_2fgtc")
+}
 
 [node name="Label" type="Label" parent="."]
 offset_left = 318.0
@@ -39,6 +86,12 @@ offset_top = 1067.0
 offset_right = 641.0
 offset_bottom = 1098.0
 text = "End Day"
+
+[node name="SummaryLabel" type="Label" parent="."]
+offset_left = 333.0
+offset_top = 346.0
+offset_right = 373.0
+offset_bottom = 369.0
 
 [connection signal="pressed" from="MoveToMain" to="." method="_on_move_to_main_pressed"]
 [connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
