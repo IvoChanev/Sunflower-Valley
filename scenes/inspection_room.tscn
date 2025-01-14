@@ -1,7 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=22 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
+[ext_resource type="Script" path="res://Ivo/Heart_System.gd" id="2_mmevn"]
+[ext_resource type="Texture2D" uid="uid://mbmohlhtctic" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="3_6ip1h"]
+[ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="4_yi8p3"]
+[ext_resource type="Script" path="res://Ivo/button_back_2.gd" id="5_piejo"]
+[ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="6_sb2xl"]
+[ext_resource type="Texture2D" uid="uid://dnfu54f4yh3vs" path="res://Ivo/Sprites/Buttons/Hearts_Sheet.png" id="7_7dyd1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy7c0"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(0, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mchm0"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(784, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skovu"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(1568, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj6bp"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(2352, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e06dq"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(3136, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udj8i"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(3920, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we2j4"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(4704, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1pmf"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(5488, 0, 784, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3df8"]
+atlas = ExtResource("7_7dyd1")
+region = Rect2(6272, 0, 784, 800)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edqdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy7c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mchm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skovu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj6bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e06dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udj8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we2j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1pmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3df8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"health_deplete",
+"speed": 12.0
+}]
 
 [sub_resource type="Animation" id="Animation_ogdor"]
 length = 0.001
@@ -42,6 +122,52 @@ _data = {
 
 [node name="InspectionRoom" type="Node"]
 script = ExtResource("1_46b5i")
+
+[node name="MarginContainer" type="MarginContainer" parent="." node_paths=PackedStringArray("hearts")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mmevn")
+hearts = [NodePath("Heart_3"), NodePath("Heart_2"), NodePath("Heart_1")]
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+texture_repeat = 2
+position = Vector2(360, 640)
+scale = Vector2(10, 10)
+texture = ExtResource("3_6ip1h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(3.81468e-06, -328)
+scale = Vector2(10, 10)
+texture = ExtResource("4_yi8p3")
+script = ExtResource("5_piejo")
+new_texture = ExtResource("6_sb2xl")
+
+[node name="Heart_1" type="AnimatedSprite2D" parent="MarginContainer"]
+position = Vector2(493, 71)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_edqdi")
+animation = &"health_deplete"
+
+[node name="Heart_2" type="AnimatedSprite2D" parent="MarginContainer"]
+position = Vector2(354, 71)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_edqdi")
+animation = &"health_deplete"
+
+[node name="Heart_3" type="AnimatedSprite2D" parent="MarginContainer"]
+position = Vector2(212, 70)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_edqdi")
+animation = &"health_deplete"
 
 [node name="Blinders" type="Sprite2D" parent="."]
 position = Vector2(359, -806)

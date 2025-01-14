@@ -18,7 +18,7 @@ func _process(_delta):
 		lose_health()
 
 func lose_health():
-	if health > 0:
+	if health > 1:
 		# Decrement health
 		health -= 1
 
@@ -26,4 +26,4 @@ func lose_health():
 		var heart_to_deplete = hearts[health]
 		heart_to_deplete.play("health_deplete")  # Play animation without checking
 	else:
-		SceneTransition.change_scene("res://Ivo/lobby_scene.tscn")
+		SceneTransition.change_scene("res://scenes/main.tscn")
