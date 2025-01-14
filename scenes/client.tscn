@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1m6asf5y4c25"]
+[gd_scene load_steps=6 format=3 uid="uid://b1m6asf5y4c25"]
 
 [ext_resource type="Script" path="res://assets/scripts/client.gd" id="1_i2sfa"]
 [ext_resource type="Texture2D" uid="uid://cph8qjwjqqfta" path="res://assets/art/client/test_client_walk_fwd.png" id="2_8bjaq"]
 [ext_resource type="Texture2D" uid="uid://bkg401k167x2n" path="res://assets/art/client/test_client_walk_back.png" id="3_cdjom"]
-[ext_resource type="PackedScene" uid="uid://deddxw24gq17h" path="res://scenes/plant.tscn" id="4_1s8dn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sg467"]
 animations = [{
@@ -25,8 +24,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrke3"]
-radius = 25.0
-height = 110.0
+radius = 51.0
+height = 238.0
 
 [node name="Client" type="Node2D"]
 script = ExtResource("1_i2sfa")
@@ -41,7 +40,5 @@ animation = &"walk_forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_qrke3")
-
-[node name="Plant" parent="." instance=ExtResource("4_1s8dn")]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

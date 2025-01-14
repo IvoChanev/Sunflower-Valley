@@ -1,38 +1,58 @@
 extends Node2D
 
+@onready var speech_bubble_scene = preload("res://scenes/speech_bubble.tscn")
+@onready var detailed_speech_bubble_scene = preload("res://scenes/detailed_speech_bubble.tscn")
+@onready var plant_scene = preload("res://scenes/plant.tscn")
+
 var plant: Node2D = null
 var plant_type: String = ""
 var disease: String = ""
+var speech_bubble_spawned: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.animation = "walk_forward"
-	assign_plant_and_disease()	
-
-func assign_plant_and_disease():
-	#List of dictionaries defining possible plants and their associated diseases
-	var plant_data = [
-		{"plant" : "Tomato", "disease": ["Spiders", "Aphids"]},
-		{"plant" : "Corn", "disease": ["Ants", "Aphids"]},
-		{"plant" : "Lettuce", "disease": ["Spiders", "Ants"]}
-	]
-	#Randomly select a plant dictionary, extract the type, and choose a random possible disease
-	var selected_plant = plant_data[randi() % plant_data.size()]
-	plant_type = selected_plant["plant"]
-	disease = selected_plant["disease"][randi() % selected_plant["disease"].size()]
+	assign_plant_and_disease()
 	
-	#Call the custom method after instantiating the plannt into the scene
-	plant = preload("res://scenes/plant.tscn").instantiate()
-	add_child(plant)
+	# Check if plant has been moved to the Inspection Room
+	if PlantManager.is_plant_in_inspection_room:
+		# Hide the plant in the Main scene
+		hide_plant()
+
+# Retrieve the data from the PlantManager 
+# Assign a plant to the client
+func assign_plant_and_disease():
+	var plant_info = PlantManager.get_random_plant_and_disease()
+	plant_type = plant_info.plant
+	disease = plant_info.disease
+	
+	print("Selected plant: %s, Disease: %s" % [plant_type, disease])
+	plant = plant_scene.instantiate()
+	get_parent().add_child(plant)
 	plant.set_plant_data(plant_type, disease)
 
-#Area2D handles input interactions
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventScreenTouch and event.pressed:
-		print("Client interacted with!")
-		interact()
+func hide_plant():
+	if plant:
+		plant.visible = false
 		
-#What happens after the client is tapped on		
-func interact():
-		print("Interacting with the client...")
-		#$AnimatedSprite2D.animation = "walk_back"
+# Client interaction
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventScreenTouch and event.pressed and not speech_bubble_spawned:
+		spawn_speech_bubble()
+
+# Initial speech bubble spawner
+func spawn_speech_bubble():
+	var speech_bubble = speech_bubble_scene.instantiate()
+	add_child(speech_bubble)
+	speech_bubble.set_speech_bubble_data(plant_type, disease)
+	speech_bubble.connect("info_button_pressed", Callable(self, "_on_info_button_pressed"))
+	speech_bubble_spawned = true
+
+# After the signal is triggered
+func _on_info_button_pressed():
+	var speech_bubble = get_node_or_null("SpeechBubble")
+	if speech_bubble:
+		speech_bubble.queue_free()
+
+	var detailed_speech_bubble = detailed_speech_bubble_scene.instantiate()
+	add_child(detailed_speech_bubble)
+	detailed_speech_bubble.set_detailed_speech_bubble_data(plant_type, disease)
