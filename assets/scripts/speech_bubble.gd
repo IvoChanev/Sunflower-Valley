@@ -9,9 +9,6 @@ var plant_type: String = ""
 var disease: String = ""
 
 func _ready():
-	# Use default values for testing
-	plant_type = "Tomato"
-	disease = "Spiders"
 	set_speech_bubble_data(plant_type, disease)
 
 func set_speech_bubble_data(plant: String, disease: String):
@@ -21,5 +18,6 @@ func set_speech_bubble_data(plant: String, disease: String):
 	else:
 		print("No sprite found for plant: %s, disease: %s" % [plant, disease])
 
+# Trigger, no data is being carried
 func _on_information_button_pressed():
 	emit_signal("info_button_pressed")
