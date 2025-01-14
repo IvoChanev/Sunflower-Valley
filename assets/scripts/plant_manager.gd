@@ -2,7 +2,7 @@ extends Node
 
 # Centralized data storage
 # Dictionary holding all the information about plants & diseases and their paths.
-# Used for the speech bubble
+
 var plant_data = {
 	"onion": {
 		"diseases": ["spiders", "flies", "worms"],
