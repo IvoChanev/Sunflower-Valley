@@ -24,6 +24,9 @@ var plant_data = {
 var current_plant_and_disease = null # Track if plant was already spawned
 var is_plant_in_inspection_room = false  # Track if plant is in Inspection Room
 
+var isDead: bool = false;
+var isHealed: bool = false;
+
 var healed_plants_count: int = 0
 var killed_plants_count: int = 0
 
@@ -31,6 +34,10 @@ var killed_plants_count: int = 0
 func reset_counters():
 	healed_plants_count = 0
 	killed_plants_count = 0
+	
+func reset_plant():
+	isDead = false;
+	isHealed = false;
 
 #Choose a random plant and a random disease
 func get_random_plant_and_disease() -> Dictionary:
@@ -80,3 +87,12 @@ func get_dead_sprite(plant: String) -> String:
 # The Inspection room was opened
 func plant_moved_to_inspection_room():
 	is_plant_in_inspection_room = true;
+	
+func plant_moved_to_main_room():
+	is_plant_in_inspection_room = false;
+	
+func plant_died():
+	isDead = true;
+	
+func plant_healed():
+	isHealed = true;

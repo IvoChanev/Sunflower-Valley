@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5ajbscsyylt"
-path="res://.godot/imported/PlayScene_2_BG.png-b0e3f69eef99512fdd38af3d8a849ac2.ctex"
+uid="uid://dmydn6sugo5w4"
+path="res://.godot/imported/ButtonOptions.png-4bc80b7d3c631a17f34c889cd3f38455.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ivo/Sprites/PlayScene_2_BG.png"
-dest_files=["res://.godot/imported/PlayScene_2_BG.png-b0e3f69eef99512fdd38af3d8a849ac2.ctex"]
+source_file="res://Ivo/Sprites/FinalUI/ButtonOptions.png"
+dest_files=["res://.godot/imported/ButtonOptions.png-4bc80b7d3c631a17f34c889cd3f38455.ctex"]
 
 [params]
 

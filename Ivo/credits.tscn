@@ -2,9 +2,9 @@
 
 [ext_resource type="Shader" path="res://Ivo/scroll.gdshader" id="1_cltq6"]
 [ext_resource type="Texture2D" uid="uid://3bp7s10a1356" path="res://Ivo/Sprites/Phone_Menu_BG.png" id="2_f1400"]
-[ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="3_y47a5"]
+[ext_resource type="Texture2D" uid="uid://d3bm5scpo1vvs" path="res://Ivo/Sprites/FinalUI/ButtonBack.png" id="3_f46q0"]
 [ext_resource type="Script" path="res://Ivo/button_back.gd" id="4_q7g2i"]
-[ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="5_5bl85"]
+[ext_resource type="Texture2D" uid="uid://cywjyhhxxjlu" path="res://Ivo/Sprites/FinalUI/ButtonBack_Pressed.png" id="5_a545x"]
 [ext_resource type="Texture2D" uid="uid://rxuw2m0kupg6" path="res://Ivo/Sprites/credits.png" id="6_8hkna"]
 [ext_resource type="Script" path="res://Ivo/up_and_down.gd" id="7_vavpm"]
 
@@ -45,11 +45,10 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 
 [node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(3.81468e-06, 528)
-scale = Vector2(10, 10)
-texture = ExtResource("3_y47a5")
+position = Vector2(1, 518)
+texture = ExtResource("3_f46q0")
 script = ExtResource("4_q7g2i")
-new_texture = ExtResource("5_5bl85")
+new_texture = ExtResource("5_a545x")
 
 [node name="Credits" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(360, 592)

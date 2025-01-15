@@ -2,20 +2,20 @@
 
 [ext_resource type="Shader" path="res://Ivo/scroll.gdshader" id="1_bampu"]
 [ext_resource type="Texture2D" uid="uid://3bp7s10a1356" path="res://Ivo/Sprites/Phone_Menu_BG.png" id="1_jqsrk"]
-[ext_resource type="Texture2D" uid="uid://d3hpnvpa0a65q" path="res://Ivo/Sprites/Title.png" id="2_fb1ft"]
+[ext_resource type="Texture2D" uid="uid://dft462xdtoyjg" path="res://Ivo/Sprites/FinalUI/Logo.png" id="3_f6q3q"]
 [ext_resource type="Script" path="res://Ivo/up_and_down.gd" id="3_ksi7o"]
-[ext_resource type="Texture2D" uid="uid://bc7qsgd755hx2" path="res://Ivo/Sprites/Buttons/ButtonPlay.png" id="5_8m0aj"]
+[ext_resource type="Texture2D" uid="uid://dxme1qebqkj2t" path="res://Ivo/Sprites/FinalUI/ButtonPlay.png" id="5_ily7a"]
 [ext_resource type="Script" path="res://Ivo/button_play.gd" id="6_es1vg"]
-[ext_resource type="Texture2D" uid="uid://bsdgr0v27jqt" path="res://Ivo/Sprites/Buttons/ButtonPlay_Pressed.png" id="7_vjt7w"]
-[ext_resource type="Texture2D" uid="uid://dtf67tjadbk3" path="res://Ivo/Sprites/Buttons/ButtonOptions.png" id="8_avj4g"]
+[ext_resource type="Texture2D" uid="uid://0r1un646m3yt" path="res://Ivo/Sprites/FinalUI/ButtonPlay_Pressed.png" id="7_aqwo3"]
+[ext_resource type="Texture2D" uid="uid://dmydn6sugo5w4" path="res://Ivo/Sprites/FinalUI/ButtonOptions.png" id="8_hrlmh"]
 [ext_resource type="Script" path="res://Ivo/button_options.gd" id="8_rphgt"]
-[ext_resource type="Texture2D" uid="uid://dlvomoort3o6j" path="res://Ivo/Sprites/Buttons/ButtonOptions_Pressed.png" id="10_rgf4a"]
+[ext_resource type="Texture2D" uid="uid://bx4208qy3ehtx" path="res://Ivo/Sprites/FinalUI/ButtonOptions_Pressed.png" id="10_dt7pp"]
+[ext_resource type="Texture2D" uid="uid://cf02j5e26baiq" path="res://Ivo/Sprites/FinalUI/ButtonExit.png" id="11_01tey"]
 [ext_resource type="Script" path="res://Ivo/button_exit.gd" id="11_cu8xu"]
-[ext_resource type="Texture2D" uid="uid://cvapqv0to0231" path="res://Ivo/Sprites/Buttons/ButtonExit.png" id="11_jj0jm"]
-[ext_resource type="Texture2D" uid="uid://cu5crglgac548" path="res://Ivo/Sprites/Buttons/ButtonExit_Pressed.png" id="13_de7o0"]
-[ext_resource type="Texture2D" uid="uid://blsety6og7hlr" path="res://Ivo/Sprites/Buttons/CreditsButton.png" id="14_mq2wa"]
+[ext_resource type="Texture2D" uid="uid://bupi0k4g1orye" path="res://Ivo/Sprites/FinalUI/ButtonExit_Pressed.png" id="13_njjs0"]
+[ext_resource type="Texture2D" uid="uid://dymd4s550l288" path="res://Ivo/Sprites/FinalUI/ButtonCredits.png" id="14_wv8gp"]
 [ext_resource type="Script" path="res://Ivo/button_credits.gd" id="15_d2be7"]
-[ext_resource type="Texture2D" uid="uid://cih4up0b7npuq" path="res://Ivo/Sprites/Buttons/CreditsButton_Pressed.png" id="16_ut372"]
+[ext_resource type="Texture2D" uid="uid://bxxnpmxyvrlyp" path="res://Ivo/Sprites/FinalUI/ButtonCredits_Pressed.png" id="16_kv87p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dusf"]
 shader = ExtResource("1_bampu")
@@ -48,9 +48,8 @@ scale = Vector2(11.25, 10)
 texture = ExtResource("1_jqsrk")
 
 [node name="Title" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(360, 640)
-scale = Vector2(10, 10)
-texture = ExtResource("2_fb1ft")
+position = Vector2(360, 216)
+texture = ExtResource("3_f6q3q")
 script = ExtResource("3_ksi7o")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -60,26 +59,25 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 
 [node name="ButtonPlay" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(-7.99999, -80)
-texture = ExtResource("5_8m0aj")
+position = Vector2(-7.99999, -138)
+texture = ExtResource("5_ily7a")
 script = ExtResource("6_es1vg")
-new_texture = ExtResource("7_vjt7w")
+new_texture = ExtResource("7_aqwo3")
 
 [node name="ButtonOptions" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(-8, 135)
-texture = ExtResource("8_avj4g")
+position = Vector2(-8, 77)
+texture = ExtResource("8_hrlmh")
 script = ExtResource("8_rphgt")
-new_texture = ExtResource("10_rgf4a")
+new_texture = ExtResource("10_dt7pp")
 
 [node name="ButtonExit" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(-8, 350)
-texture = ExtResource("11_jj0jm")
+position = Vector2(-8, 292)
+texture = ExtResource("11_01tey")
 script = ExtResource("11_cu8xu")
-new_texture = ExtResource("13_de7o0")
+new_texture = ExtResource("13_njjs0")
 
 [node name="ButtonCredits" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(297, 576)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_mq2wa")
+position = Vector2(246, 530)
+texture = ExtResource("14_wv8gp")
 script = ExtResource("15_d2be7")
-new_texture = ExtResource("16_ut372")
+new_texture = ExtResource("16_kv87p")

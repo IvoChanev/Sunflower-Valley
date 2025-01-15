@@ -2,9 +2,9 @@
 
 [ext_resource type="Shader" path="res://Ivo/scroll.gdshader" id="1_hl7r2"]
 [ext_resource type="Texture2D" uid="uid://3bp7s10a1356" path="res://Ivo/Sprites/Phone_Menu_BG.png" id="2_et15m"]
-[ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="3_ev3oh"]
+[ext_resource type="Texture2D" uid="uid://d3bm5scpo1vvs" path="res://Ivo/Sprites/FinalUI/ButtonBack.png" id="3_b51ve"]
 [ext_resource type="Script" path="res://Ivo/button_back.gd" id="4_lvl1h"]
-[ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="5_6k6dc"]
+[ext_resource type="Texture2D" uid="uid://cywjyhhxxjlu" path="res://Ivo/Sprites/FinalUI/ButtonBack_Pressed.png" id="5_8u8tk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dusf"]
 shader = ExtResource("1_hl7r2")
@@ -43,8 +43,7 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 
 [node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(3.81468e-06, 528)
-scale = Vector2(10, 10)
-texture = ExtResource("3_ev3oh")
+position = Vector2(3.81468e-06, 519)
+texture = ExtResource("3_b51ve")
 script = ExtResource("4_lvl1h")
-new_texture = ExtResource("5_6k6dc")
+new_texture = ExtResource("5_8u8tk")

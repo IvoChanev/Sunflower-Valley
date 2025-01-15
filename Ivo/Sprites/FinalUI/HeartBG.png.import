@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5ajbscsyylt"
-path="res://.godot/imported/PlayScene_2_BG.png-b0e3f69eef99512fdd38af3d8a849ac2.ctex"
+uid="uid://bnyiv2fang65s"
+path="res://.godot/imported/HeartBG.png-7e222f4b7af6d2362b0bea689ef25a0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ivo/Sprites/PlayScene_2_BG.png"
-dest_files=["res://.godot/imported/PlayScene_2_BG.png-b0e3f69eef99512fdd38af3d8a849ac2.ctex"]
+source_file="res://Ivo/Sprites/FinalUI/HeartBG.png"
+dest_files=["res://.godot/imported/HeartBG.png-7e222f4b7af6d2362b0bea689ef25a0c.ctex"]
 
 [params]
 

@@ -32,13 +32,37 @@ func _on_move_to_main_pressed() -> void:
 
 # Kill the current plant
 func _on_kill_button_pressed() -> void:
-	PlantManager.killed_plants_count += 1
-	$Plant.mark_as_killed()
+	var heart_system = get_node("MarginContainer") #Referencing the heart system script
+	if heart_system.health > 1:
+		heart_system.lose_health()
+		
+		$Plant.take_damage()
+	else:
+		heart_system.lose_health()
+		
+		$Plant.take_damage()
+		
+		PlantManager.plant_died()
+		
+		PlantManager.plant_moved_to_main_room()
+		PlantManager.killed_plants_count += 1
+		$Plant.mark_as_killed()
+		
+		heart_system.plant_dead()
 
 # Heal the current plant
-func _on_heal_button_pressed() -> void:
-	PlantManager.healed_plants_count += 1
+func _on_heal_button_pressed() -> void: 
+	
+	var heart_system = get_node("MarginContainer") #Referencing the heart system script
+	heart_system.plant_healed()
+	
+	PlantManager.plant_healed()
+	
+	PlantManager.plant_moved_to_main_room()
+	
+	PlantManager.healed_plants_count += 1 #Code for curing the plant
 	$Plant.mark_as_healed()
+
 	
 # End the day 
 func _on_end_day_button_pressed() -> void:

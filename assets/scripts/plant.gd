@@ -3,9 +3,28 @@ extends Node2D
 var plant_type: String = ""
 var disease: String = ""
 
+var isDead: bool = false;
+var isHealed: bool = false;
+
 @onready var animated_sprite = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node
 @onready var sprite_node = $Sprite2D
+@onready var dmg_flash_anim_player = $DmgFlashAnimationPlayer
 
+func _ready():
+	if PlantManager.isDead:
+		mark_as_killed()
+		
+		await wait(2)
+		PlantManager.reset_plant()
+		self.queue_free()
+		
+	elif PlantManager.isHealed:
+		mark_as_healed()
+		
+		await wait(2)
+		PlantManager.reset_plant()
+		self.queue_free()
+		
 # Set the plant data and select the correct animation
 func set_plant_data(plant: String, disease: String):
 	plant_type = plant
@@ -23,6 +42,9 @@ func mark_as_healed():
 	if healthy_sprite_path != "":
 		set_sprite(healthy_sprite_path)
 		
+func take_damage():
+	dmg_flash_anim_player.play("dmg_flash")
+	
 func mark_as_killed():
 	var dead_sprite_path = PlantManager.get_dead_sprite(plant_type)
 	if dead_sprite_path != "":
@@ -36,3 +58,13 @@ func set_sprite(sprite_path: String):
 		sprite_node.visible = true  # Ensure the static sprite is visible
 	else:
 		print("Failed to load sprite: %s" % sprite_path)
+		
+func wait(seconds: float) -> Timer:
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = seconds
+	timer.one_shot = true
+	timer.start()
+	await timer.timeout
+	timer.queue_free()
+	return timer

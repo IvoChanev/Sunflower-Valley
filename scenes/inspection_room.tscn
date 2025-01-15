@@ -1,13 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=30 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
 [ext_resource type="Script" path="res://Ivo/Heart_System.gd" id="2_mmevn"]
-[ext_resource type="Texture2D" uid="uid://mbmohlhtctic" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="3_6ip1h"]
-[ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="4_yi8p3"]
+[ext_resource type="Texture2D" uid="uid://dw5ajbscsyylt" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="3_6ip1h"]
+[ext_resource type="Texture2D" uid="uid://d3bm5scpo1vvs" path="res://Ivo/Sprites/FinalUI/ButtonBack.png" id="4_yyelu"]
 [ext_resource type="Script" path="res://Ivo/button_back_2.gd" id="5_piejo"]
-[ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="6_sb2xl"]
+[ext_resource type="Texture2D" uid="uid://cywjyhhxxjlu" path="res://Ivo/Sprites/FinalUI/ButtonBack_Pressed.png" id="6_3fvxc"]
 [ext_resource type="Texture2D" uid="uid://dnfu54f4yh3vs" path="res://Ivo/Sprites/Buttons/Hearts_Sheet.png" id="7_7dyd1"]
+[ext_resource type="Texture2D" uid="uid://bnyiv2fang65s" path="res://Ivo/Sprites/FinalUI/HeartBG.png" id="7_qf0ef"]
+[ext_resource type="Texture2D" uid="uid://umvab8j0pteo" path="res://Ivo/Sprites/FinalUI/ButtonJournal.png" id="7_vh0iu"]
+[ext_resource type="Texture2D" uid="uid://fs3no3dkpv2a" path="res://Ivo/Sprites/FinalUI/ButtonDrawer.png" id="8_a5otv"]
+[ext_resource type="Script" path="res://scenes/button_journal.gd" id="8_d1pyw"]
+[ext_resource type="Texture2D" uid="uid://0ebwd5082hh" path="res://Ivo/Sprites/FinalUI/ButtonJournal_Pressed.png" id="10_560is"]
+[ext_resource type="Script" path="res://scenes/button_drawer.gd" id="10_mojbh"]
+[ext_resource type="Texture2D" uid="uid://bik7ia05c1s2f" path="res://Ivo/Sprites/FinalUI/ButtonDrawer_Pressed.png" id="11_4f6ag"]
+[ext_resource type="Texture2D" uid="uid://c8mkvw612kv03" path="res://Ivo/Sprites/Drawer_Placeholder.png" id="11_tgc5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy7c0"]
 atlas = ExtResource("7_7dyd1")
@@ -146,10 +154,86 @@ size_flags_stretch_ratio = 0.0
 
 [node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
 position = Vector2(3.81468e-06, -328)
-scale = Vector2(10, 10)
-texture = ExtResource("4_yi8p3")
+texture = ExtResource("4_yyelu")
 script = ExtResource("5_piejo")
-new_texture = ExtResource("6_sb2xl")
+new_texture = ExtResource("6_3fvxc")
+
+[node name="Drawer" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(0, 850)
+scale = Vector2(10, 10)
+texture = ExtResource("11_tgc5p")
+
+[node name="ButtonJournal" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer"]
+position = Vector2(24.1, -32.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_vh0iu")
+script = ExtResource("8_d1pyw")
+new_texture = ExtResource("10_560is")
+
+[node name="ButtonDrawer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer" node_paths=PackedStringArray("sprite")]
+position = Vector2(-24.3, -32.3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_a5otv")
+script = ExtResource("10_mojbh")
+new_texture = ExtResource("11_4f6ag")
+sprite = NodePath("..")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Drawer"]
+custom_minimum_size = Vector2(720, 300)
+offset_left = -36.0
+offset_top = -16.5
+offset_right = 684.0
+offset_bottom = 283.5
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+scroll_vertical_custom_step = 0.0
+vertical_scroll_mode = 3
+scroll_deadzone = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1800, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+position = Vector2(165, 144)
+texture = ExtResource("7_vh0iu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+position = Vector2(413, 144)
+texture = ExtResource("7_vh0iu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+position = Vector2(648, 144)
+texture = ExtResource("7_vh0iu")
+
+[node name="Sprite2D4" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+position = Vector2(874, 144)
+texture = ExtResource("7_vh0iu")
+
+[node name="Sprite2D5" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+position = Vector2(1102, 144)
+texture = ExtResource("7_vh0iu")
+
+[node name="Sprite2D6" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+position = Vector2(1325, 144)
+texture = ExtResource("7_vh0iu")
+
+[node name="Heart_BG_1" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(493, 71)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_qf0ef")
+
+[node name="Heart_BG_2" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(354, 71)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_qf0ef")
+
+[node name="Heart_BG_3" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(212, 70)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_qf0ef")
 
 [node name="Heart_1" type="AnimatedSprite2D" parent="MarginContainer"]
 position = Vector2(493, 71)
@@ -178,26 +262,12 @@ libraries = {
 "": SubResource("AnimationLibrary_2fgtc")
 }
 
-[node name="Label" type="Label" parent="."]
-offset_left = 318.0
-offset_top = 60.0
-offset_right = 360.0
-offset_bottom = 83.0
-text = "Clinic"
-
-[node name="MoveToMain" type="Button" parent="."]
-offset_left = 568.0
-offset_top = 804.0
-offset_right = 665.0
-offset_bottom = 835.0
-text = "Go to: Main"
-
 [node name="KillButton" type="Button" parent="."]
 offset_left = 571.0
 offset_top = 898.0
 offset_right = 647.0
 offset_bottom = 929.0
-text = "Misscured Plant"
+text = "Misscure Plant"
 
 [node name="HealButton" type="Button" parent="."]
 offset_left = 569.0
@@ -219,7 +289,6 @@ offset_top = 346.0
 offset_right = 373.0
 offset_bottom = 369.0
 
-[connection signal="pressed" from="MoveToMain" to="." method="_on_move_to_main_pressed"]
 [connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EndDayButton" to="." method="_on_end_day_button_pressed"]

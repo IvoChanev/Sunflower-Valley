@@ -17,6 +17,7 @@ func _ready():
 	if PlantManager.is_plant_in_inspection_room:
 		# Hide the plant in the Main scene
 		hide_plant()
+		
 
 # Retrieve the data from the PlantManager 
 # Assign a plant to the client

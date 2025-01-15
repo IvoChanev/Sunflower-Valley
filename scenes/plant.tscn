@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://deddxw24gq17h"]
+[gd_scene load_steps=18 format=3 uid="uid://deddxw24gq17h"]
 
 [ext_resource type="Script" path="res://assets/scripts/plant.gd" id="1_0nd0k"]
+[ext_resource type="Shader" uid="uid://ce25l2m688dac" path="res://Ivo/dmg_flash.tres" id="2_8p32b"]
 [ext_resource type="Texture2D" uid="uid://dd6es8fbo3hh2" path="res://assets/art/plants/onion/onion_flies1.png" id="2_cecvr"]
 [ext_resource type="Texture2D" uid="uid://qluu7slsxlxw" path="res://assets/art/plants/onion/onion_flies2.png" id="3_72mpf"]
 [ext_resource type="Texture2D" uid="uid://gqofoiwcpew1" path="res://assets/art/plants/onion/onion_flies3.png" id="4_1xsir"]
@@ -10,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bjofr3omod5wf" path="res://assets/art/plants/onion/onion_worm1.png" id="8_ojerj"]
 [ext_resource type="Texture2D" uid="uid://ddbxj572i25kl" path="res://assets/art/plants/onion/onion_worm2.png" id="9_qcnpo"]
 [ext_resource type="Texture2D" uid="uid://dkllumikexut8" path="res://assets/art/plants/onion/onion_worm3.png" id="10_sradq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_acswc"]
+shader = ExtResource("2_8p32b")
+shader_parameter/enabled = true
+shader_parameter/tint = Color(1, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhhl6"]
 animations = [{
@@ -56,14 +62,99 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Animation" id="Animation_j2hpk"]
+resource_name = "dmg_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:material:shader_parameter/tint")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m6m1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:material:shader_parameter/tint")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nxgbc"]
+resource_name = "default"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6u3l8"]
+_data = {
+"RESET": SubResource("Animation_m6m1k"),
+"default": SubResource("Animation_nxgbc"),
+"dmg_flash": SubResource("Animation_j2hpk")
+}
+
 [node name="Plant" type="Node2D"]
 position = Vector2(100, 185)
 script = ExtResource("1_0nd0k")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_acswc")
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
-animation = &"onion_worms"
+animation = &"onion_flies"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="DmgFlashAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6u3l8")
+}
+autoplay = "default"
