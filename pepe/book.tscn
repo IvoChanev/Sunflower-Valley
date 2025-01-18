@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://tnb7gqcgy3cr"]
+
+[ext_resource type="Script" path="res://book.gd" id="1_8bame"]
+[ext_resource type="Texture2D" uid="uid://dg6hmppcjeihm" path="res://icon.svg" id="2_7m6yx"]
+[ext_resource type="PackedScene" uid="uid://cqtsiwtkw1hm1" path="res://scenes/bookPages.tscn" id="3_rvy83"]
+
+[node name="book" type="Node2D" node_paths=PackedStringArray("bookImage")]
+position = Vector2(35, 35)
+script = ExtResource("1_8bame")
+target_position = Vector2(350, 0)
+bookImage = NodePath("potato")
+
+[node name="bookImage" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7m6yx")
+
+[node name="potato" parent="." instance=ExtResource("3_rvy83")]
