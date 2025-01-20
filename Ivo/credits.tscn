@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://itnrr73i8ies"]
+[gd_scene load_steps=10 format=3 uid="uid://itnrr73i8ies"]
 
 [ext_resource type="Shader" path="res://Ivo/scroll.gdshader" id="1_cltq6"]
 [ext_resource type="Texture2D" uid="uid://3bp7s10a1356" path="res://Ivo/Sprites/Phone_Menu_BG.png" id="2_f1400"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Ivo/button_back.gd" id="4_q7g2i"]
 [ext_resource type="Texture2D" uid="uid://cywjyhhxxjlu" path="res://Ivo/Sprites/FinalUI/ButtonBack_Pressed.png" id="5_a545x"]
 [ext_resource type="Texture2D" uid="uid://rxuw2m0kupg6" path="res://Ivo/Sprites/credits.png" id="6_8hkna"]
+[ext_resource type="AudioStream" uid="uid://ddgkhrwibigxo" path="res://AARON/AUDIO/SOUNDS/Continue Button.wav" id="6_fpjls"]
 [ext_resource type="Script" path="res://Ivo/up_and_down.gd" id="7_vavpm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dusf"]
@@ -49,6 +50,10 @@ position = Vector2(1, 518)
 texture = ExtResource("3_f46q0")
 script = ExtResource("4_q7g2i")
 new_texture = ExtResource("5_a545x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonBack"]
+stream = ExtResource("6_fpjls")
+bus = &"SOUNDS"
 
 [node name="Credits" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(360, 592)

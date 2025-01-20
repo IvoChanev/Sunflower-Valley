@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cf7mg0k7kw6x8"]
+[gd_scene load_steps=18 format=3 uid="uid://cf7mg0k7kw6x8"]
 
 [ext_resource type="Script" path="res://Ivo/Heart_System.gd" id="1_nfhe2"]
 [ext_resource type="Texture2D" uid="uid://dw5ajbscsyylt" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="1_ttrk1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Ivo/button_back_2.gd" id="3_htwn5"]
 [ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="4_uqgjy"]
 [ext_resource type="Texture2D" uid="uid://dnfu54f4yh3vs" path="res://Ivo/Sprites/Buttons/Hearts_Sheet.png" id="5_0kxx6"]
+[ext_resource type="AudioStream" uid="uid://ddgkhrwibigxo" path="res://AARON/AUDIO/SOUNDS/Continue Button.wav" id="6_gg56l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy7c0"]
 atlas = ExtResource("5_0kxx6")
@@ -119,6 +120,10 @@ scale = Vector2(10, 10)
 texture = ExtResource("2_xmjgk")
 script = ExtResource("3_htwn5")
 new_texture = ExtResource("4_uqgjy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonBack"]
+stream = ExtResource("6_gg56l")
+bus = &"SOUNDS"
 
 [node name="Heart_1" type="AnimatedSprite2D" parent="MarginContainer"]
 position = Vector2(493, 71)

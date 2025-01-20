@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bimhd48ibfvr0"]
+[gd_scene load_steps=10 format=3 uid="uid://bimhd48ibfvr0"]
 
 [ext_resource type="Texture2D" uid="uid://coehgm5lk4hi1" path="res://Ivo/Sprites/PlayScene_BG.png" id="1_hn1h6"]
 [ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="3_ouxyj"]
 [ext_resource type="Script" path="res://Ivo/button_back.gd" id="4_3v75n"]
+[ext_resource type="AudioStream" uid="uid://ddgkhrwibigxo" path="res://AARON/AUDIO/SOUNDS/Continue Button.wav" id="5_gvjfa"]
 [ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="5_k5l3v"]
 [ext_resource type="Texture2D" uid="uid://cxfh1y4jtoxyu" path="res://Ivo/Sprites/Buttons/Button_Next.png" id="5_x646p"]
 [ext_resource type="Script" path="res://Ivo/button_next.gd" id="6_xec15"]
 [ext_resource type="Texture2D" uid="uid://ddwgm2optge6j" path="res://Ivo/Sprites/Buttons/Button_Next_Pressed.png" id="7_3girc"]
+[ext_resource type="AudioStream" uid="uid://b6ia8csjh4ps" path="res://AARON/AUDIO/SOUNDS/Play Button.wav" id="9_p1a8y"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -45,9 +47,17 @@ texture = ExtResource("3_ouxyj")
 script = ExtResource("4_3v75n")
 new_texture = ExtResource("5_k5l3v")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonBack"]
+stream = ExtResource("5_gvjfa")
+bus = &"SOUNDS"
+
 [node name="ButtonNext" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
 position = Vector2(3.81468e-06, -136)
 scale = Vector2(10, 10)
 texture = ExtResource("5_x646p")
 script = ExtResource("6_xec15")
 new_texture = ExtResource("7_3girc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonNext"]
+stream = ExtResource("9_p1a8y")
+bus = &"SOUNDS"

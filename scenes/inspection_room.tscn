@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=34 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://cywjyhhxxjlu" path="res://Ivo/Sprites/FinalUI/ButtonBack_Pressed.png" id="6_3fvxc"]
 [ext_resource type="Texture2D" uid="uid://dnfu54f4yh3vs" path="res://Ivo/Sprites/Buttons/Hearts_Sheet.png" id="7_7dyd1"]
 [ext_resource type="Texture2D" uid="uid://bsyu8qji4nk0r" path="res://assets/art/environmental/drawer.png" id="7_l3i2y"]
+[ext_resource type="AudioStream" uid="uid://ddgkhrwibigxo" path="res://AARON/AUDIO/SOUNDS/Continue Button.wav" id="7_nnxct"]
 [ext_resource type="Texture2D" uid="uid://bnyiv2fang65s" path="res://Ivo/Sprites/FinalUI/HeartBG.png" id="7_qf0ef"]
 [ext_resource type="Texture2D" uid="uid://umvab8j0pteo" path="res://Ivo/Sprites/FinalUI/ButtonJournal.png" id="7_vh0iu"]
 [ext_resource type="Texture2D" uid="uid://fs3no3dkpv2a" path="res://Ivo/Sprites/FinalUI/ButtonDrawer.png" id="8_a5otv"]
 [ext_resource type="Script" path="res://scenes/button_drawer.gd" id="10_mojbh"]
 [ext_resource type="Texture2D" uid="uid://bik7ia05c1s2f" path="res://Ivo/Sprites/FinalUI/ButtonDrawer_Pressed.png" id="11_4f6ag"]
+[ext_resource type="AudioStream" uid="uid://cedj10vnt2bpe" path="res://AARON/AUDIO/SOUNDS/Open Toolbox.wav" id="12_ft1s3"]
 
 [sub_resource type="Animation" id="Animation_a6jf4"]
 length = 0.001
@@ -208,6 +210,10 @@ texture = ExtResource("4_yyelu")
 script = ExtResource("5_piejo")
 new_texture = ExtResource("6_3fvxc")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonBack"]
+stream = ExtResource("7_nnxct")
+bus = &"SOUNDS"
+
 [node name="Drawer" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
 position = Vector2(0, 680)
 scale = Vector2(1.2, 1)
@@ -226,6 +232,10 @@ root_node = NodePath("../../ScrollContainer")
 libraries = {
 "": SubResource("AnimationLibrary_31h0r")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/Drawer/ButtonDrawer"]
+stream = ExtResource("12_ft1s3")
+bus = &"INSPECT"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Drawer"]
 custom_minimum_size = Vector2(720, 300)

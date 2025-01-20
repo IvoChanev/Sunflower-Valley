@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rrgi4ee76b5n"]
+[gd_scene load_steps=10 format=3 uid="uid://rrgi4ee76b5n"]
 
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_e6bmv"]
 [ext_resource type="Texture2D" uid="uid://dd3pu1dqh5qmh" path="res://assets/art/environmental/bbb673f4-0dde-43bd-99e0-e58771210640.png" id="2_v2y1p"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/button_goToClinic.gd" id="5_inlyg"]
 [ext_resource type="Texture2D" uid="uid://d1jj3io4fhwaw" path="res://assets/art/environmental/38810aa4-9521-47b3-8794-4b4ac2833def.png" id="5_wcg1l"]
 [ext_resource type="Texture2D" uid="uid://cn55e1qp1raci" path="res://Ivo/Sprites/FinalUI/ButtonCure_Pressed.png" id="6_021lk"]
+[ext_resource type="AudioStream" uid="uid://ddgkhrwibigxo" path="res://AARON/AUDIO/SOUNDS/Continue Button.wav" id="9_xk3av"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e6bmv")
@@ -51,3 +52,7 @@ position = Vector2(10, 495)
 texture = ExtResource("4_5eq84")
 script = ExtResource("5_inlyg")
 new_texture = ExtResource("6_021lk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonCure"]
+stream = ExtResource("9_xk3av")
+bus = &"SOUNDS"

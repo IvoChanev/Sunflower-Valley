@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnyn252m7plu"]
+
+[ext_resource type="AudioStream" uid="uid://crkohrcgmouuo" path="res://AARON/AUDIO/MUSIC/reverie-calm-piano-music-280263.mp3" id="1_3b63g"]
+
+[node name="MUSIC_BG" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_3b63g")
+autoplay = true
+bus = &"MUSIC"

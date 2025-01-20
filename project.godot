@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneTransition="*res://Ivo/scene_transition.tscn"
 PlantManager="*res://assets/scripts/plant_manager.gd"
+MusicBg="*res://AARON/SCENES_AUDIO/music_bg.tscn"
 
 [display]
 

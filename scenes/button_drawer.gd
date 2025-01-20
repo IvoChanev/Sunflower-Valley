@@ -1,4 +1,5 @@
 extends Sprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Adjustable properties
@@ -14,6 +15,7 @@ func go_up():
 	if sprite:
 		#sprite.position = Vector2(0, 420)
 		anim_player.play("go_up")
+		audio_stream_player_2d.play()
 	else:
 		print("Sprite2D not assigned!")
 
@@ -21,6 +23,7 @@ func go_down():
 	if sprite:
 		#sprite.position = Vector2(0, 850)
 		anim_player.play("go_down")
+		audio_stream_player_2d.play()
 	else:
 		print("Sprite2D not assigned!")
 
