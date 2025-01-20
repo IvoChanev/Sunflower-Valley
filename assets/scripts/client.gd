@@ -11,6 +11,10 @@ var speech_bubble_spawned: bool = false
 
 func _ready():
 	$AnimatedSprite2D.animation = "walk_forward"
+	
+	# Initialize the target position (can be any Vector2 value)
+	target_position = Vector2(200, 750)
+	
 	assign_plant_and_disease()
 	
 	# Check if plant has been moved to the Inspection Room
@@ -18,6 +22,20 @@ func _ready():
 		# Hide the plant in the Main scene
 		hide_plant()
 		
+# Target position to move the sprite to
+var target_position = Vector2()
+
+# Speed at which the sprite moves towards the target position
+var speed = 3
+
+
+func _process(delta):
+	move_to_target(delta)
+
+# Function to move the sprite towards the target position
+func move_to_target(delta):
+	# Update the position using linear interpolation
+	position = position.lerp(target_position, speed * delta)
 
 # Retrieve the data from the PlantManager 
 # Assign a plant to the client

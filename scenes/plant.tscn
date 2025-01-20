@@ -141,17 +141,20 @@ _data = {
 }
 
 [node name="Plant" type="Node2D"]
-position = Vector2(100, 185)
+position = Vector2(156, 787)
 script = ExtResource("1_0nd0k")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
 material = SubResource("ShaderMaterial_acswc")
+position = Vector2(-48, -105)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
 animation = &"onion_flies"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-47, -94)
 
 [node name="DmgFlashAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

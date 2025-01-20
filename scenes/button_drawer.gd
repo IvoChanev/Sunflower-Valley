@@ -6,17 +6,21 @@ extends Sprite2D
 
 @export var sprite: Sprite2D
 
+@onready var anim_player = $AnimationPlayer
+
 var isDrawerOpen: bool = false;
 
 func go_up():
 	if sprite:
-		sprite.position = Vector2(0, 420)
+		#sprite.position = Vector2(0, 420)
+		anim_player.play("go_up")
 	else:
 		print("Sprite2D not assigned!")
 
 func go_down():
 	if sprite:
-		sprite.position = Vector2(0, 850)
+		#sprite.position = Vector2(0, 850)
+		anim_player.play("go_down")
 	else:
 		print("Sprite2D not assigned!")
 
