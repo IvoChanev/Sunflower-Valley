@@ -42,6 +42,9 @@ func mark_as_healed():
 	if healthy_sprite_path != "":
 		set_sprite(healthy_sprite_path)
 		
+	#sprite_node.position = Vector2(620, 1370)
+	sprite_node.scale = Vector2(.2, .2)
+		
 func take_damage():
 	dmg_flash_anim_player.play("dmg_flash")
 	
@@ -49,6 +52,8 @@ func mark_as_killed():
 	var dead_sprite_path = PlantManager.get_dead_sprite(plant_type)
 	if dead_sprite_path != "":
 		set_sprite(dead_sprite_path)
+	sprite_node.scale = Vector2(.2, .2)
+
 		
 func set_sprite(sprite_path: String):
 	var texture = load(sprite_path)

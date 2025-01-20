@@ -141,7 +141,8 @@ _data = {
 }
 
 [node name="Plant" type="Node2D"]
-position = Vector2(156, 787)
+position = Vector2(271, 891)
+scale = Vector2(2, 2)
 script = ExtResource("1_0nd0k")
 metadata/_edit_group_ = true
 

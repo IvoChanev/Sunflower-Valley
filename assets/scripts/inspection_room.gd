@@ -20,7 +20,8 @@ func _ready():
 		# Instantiate and place the plant in the Inspection room
 		plant = plant_scene.instantiate()
 		add_child(plant)
-		plant.position = Vector2(300, 300)  # Adjust position as needed
+		plant.position = Vector2(620, 1370)
+		plant.scale = Vector2(5.5, 5.5)
 		plant.set_plant_data(plant_type, disease)  # Set the plant's data
 		
 		# Mark the plant as moved to the Inspection Room

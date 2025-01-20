@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cf7mg0k7kw6x8"]
 
 [ext_resource type="Script" path="res://Ivo/Heart_System.gd" id="1_nfhe2"]
-[ext_resource type="Texture2D" uid="uid://mbmohlhtctic" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="1_ttrk1"]
+[ext_resource type="Texture2D" uid="uid://dw5ajbscsyylt" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="1_ttrk1"]
 [ext_resource type="Texture2D" uid="uid://fv01rvnaqw3t" path="res://Ivo/Sprites/Buttons/Button_Back.png" id="2_xmjgk"]
 [ext_resource type="Script" path="res://Ivo/button_back_2.gd" id="3_htwn5"]
 [ext_resource type="Texture2D" uid="uid://1ten0abdup6r" path="res://Ivo/Sprites/Buttons/Button_Back_Pressed.png" id="4_uqgjy"]
