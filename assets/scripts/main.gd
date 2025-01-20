@@ -37,7 +37,7 @@ func _ready() :
 # Instantiate the client scene
 func spawn_client():
 	var client = client_scene.instantiate()
-	client.position = Vector2(100, 200)
+	client.position = Vector2(-400, 750)
 	add_child(client)
 	
 # Helper function to create a delay

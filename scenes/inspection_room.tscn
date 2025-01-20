@@ -1,21 +1,71 @@
-[gd_scene load_steps=30 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=32 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
 [ext_resource type="Script" path="res://Ivo/Heart_System.gd" id="2_mmevn"]
-[ext_resource type="Texture2D" uid="uid://dw5ajbscsyylt" path="res://Ivo/Sprites/PlayScene_2_BG.png" id="3_6ip1h"]
+[ext_resource type="Texture2D" uid="uid://c2xe2xp36848e" path="res://assets/art/environmental/BG.png" id="3_v526m"]
 [ext_resource type="Texture2D" uid="uid://d3bm5scpo1vvs" path="res://Ivo/Sprites/FinalUI/ButtonBack.png" id="4_yyelu"]
 [ext_resource type="Script" path="res://Ivo/button_back_2.gd" id="5_piejo"]
 [ext_resource type="Texture2D" uid="uid://cywjyhhxxjlu" path="res://Ivo/Sprites/FinalUI/ButtonBack_Pressed.png" id="6_3fvxc"]
 [ext_resource type="Texture2D" uid="uid://dnfu54f4yh3vs" path="res://Ivo/Sprites/Buttons/Hearts_Sheet.png" id="7_7dyd1"]
+[ext_resource type="Texture2D" uid="uid://bsyu8qji4nk0r" path="res://assets/art/environmental/drawer.png" id="7_l3i2y"]
 [ext_resource type="Texture2D" uid="uid://bnyiv2fang65s" path="res://Ivo/Sprites/FinalUI/HeartBG.png" id="7_qf0ef"]
 [ext_resource type="Texture2D" uid="uid://umvab8j0pteo" path="res://Ivo/Sprites/FinalUI/ButtonJournal.png" id="7_vh0iu"]
 [ext_resource type="Texture2D" uid="uid://fs3no3dkpv2a" path="res://Ivo/Sprites/FinalUI/ButtonDrawer.png" id="8_a5otv"]
-[ext_resource type="Script" path="res://scenes/button_journal.gd" id="8_d1pyw"]
-[ext_resource type="Texture2D" uid="uid://0ebwd5082hh" path="res://Ivo/Sprites/FinalUI/ButtonJournal_Pressed.png" id="10_560is"]
 [ext_resource type="Script" path="res://scenes/button_drawer.gd" id="10_mojbh"]
 [ext_resource type="Texture2D" uid="uid://bik7ia05c1s2f" path="res://Ivo/Sprites/FinalUI/ButtonDrawer_Pressed.png" id="11_4f6ag"]
-[ext_resource type="Texture2D" uid="uid://c8mkvw612kv03" path="res://Ivo/Sprites/Drawer_Placeholder.png" id="11_tgc5p"]
+
+[sub_resource type="Animation" id="Animation_a6jf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 680)]
+}
+
+[sub_resource type="Animation" id="Animation_fjrug"]
+resource_name = "go_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 330), Vector2(0, 680)]
+}
+
+[sub_resource type="Animation" id="Animation_36mo8"]
+resource_name = "go_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 680), Vector2(0, 330)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31h0r"]
+_data = {
+"RESET": SubResource("Animation_a6jf4"),
+"go_down": SubResource("Animation_fjrug"),
+"go_up": SubResource("Animation_36mo8")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy7c0"]
 atlas = ExtResource("7_7dyd1")
@@ -140,11 +190,11 @@ grow_vertical = 2
 script = ExtResource("2_mmevn")
 hearts = [NodePath("Heart_3"), NodePath("Heart_2"), NodePath("Heart_1")]
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+[node name="BG" type="Sprite2D" parent="MarginContainer"]
+z_index = -6
 texture_repeat = 2
-position = Vector2(360, 640)
-scale = Vector2(10, 10)
-texture = ExtResource("3_6ip1h")
+position = Vector2(360, 480)
+texture = ExtResource("3_v526m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -159,32 +209,31 @@ script = ExtResource("5_piejo")
 new_texture = ExtResource("6_3fvxc")
 
 [node name="Drawer" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(0, 850)
-scale = Vector2(10, 10)
-texture = ExtResource("11_tgc5p")
-
-[node name="ButtonJournal" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer"]
-position = Vector2(24.1, -32.6)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_vh0iu")
-script = ExtResource("8_d1pyw")
-new_texture = ExtResource("10_560is")
+position = Vector2(0, 680)
+scale = Vector2(1.2, 1)
+texture = ExtResource("7_l3i2y")
 
 [node name="ButtonDrawer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer" node_paths=PackedStringArray("sprite")]
-position = Vector2(-24.3, -32.3)
-scale = Vector2(0.1, 0.1)
+position = Vector2(-210, -171)
+scale = Vector2(0.8, 1)
 texture = ExtResource("8_a5otv")
 script = ExtResource("10_mojbh")
 new_texture = ExtResource("11_4f6ag")
 sprite = NodePath("..")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/Drawer/ButtonDrawer"]
+root_node = NodePath("../../ScrollContainer")
+libraries = {
+"": SubResource("AnimationLibrary_31h0r")
+}
+
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Drawer"]
 custom_minimum_size = Vector2(720, 300)
-offset_left = -36.0
-offset_top = -16.5
-offset_right = 684.0
-offset_bottom = 283.5
-scale = Vector2(0.1, 0.1)
+offset_left = -287.5
+offset_top = 15.0
+offset_right = 432.5
+offset_bottom = 315.0
+scale = Vector2(0.8, 1)
 size_flags_horizontal = 3
 scroll_vertical_custom_step = 0.0
 vertical_scroll_mode = 3
@@ -255,6 +304,7 @@ animation = &"health_deplete"
 
 [node name="Blinders" type="Sprite2D" parent="."]
 position = Vector2(359, -806)
+scale = Vector2(1.01667, 1)
 texture = ExtResource("2_buehu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Blinders"]

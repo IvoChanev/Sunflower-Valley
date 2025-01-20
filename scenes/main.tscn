@@ -1,16 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://rrgi4ee76b5n"]
+[gd_scene load_steps=9 format=3 uid="uid://rrgi4ee76b5n"]
 
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_e6bmv"]
-[ext_resource type="Shader" path="res://Ivo/scroll.gdshader" id="2_ve7wo"]
-[ext_resource type="Texture2D" uid="uid://3bp7s10a1356" path="res://Ivo/Sprites/Phone_Menu_BG.png" id="3_t3yv1"]
+[ext_resource type="Texture2D" uid="uid://dd3pu1dqh5qmh" path="res://assets/art/environmental/bbb673f4-0dde-43bd-99e0-e58771210640.png" id="2_v2y1p"]
+[ext_resource type="Texture2D" uid="uid://balbckocvwdkr" path="res://assets/art/environmental/Counter.png" id="3_0bq4h"]
 [ext_resource type="Texture2D" uid="uid://d3hlfwirsm6os" path="res://Ivo/Sprites/FinalUI/ButtonCure.png" id="4_5eq84"]
+[ext_resource type="Texture2D" uid="uid://bc2os4ob6gqoa" path="res://assets/art/environmental/6f84d72f-1c2a-4e7b-b432-259b2a7e4a99.png" id="4_iusks"]
 [ext_resource type="Script" path="res://scenes/button_goToClinic.gd" id="5_inlyg"]
+[ext_resource type="Texture2D" uid="uid://d1jj3io4fhwaw" path="res://assets/art/environmental/38810aa4-9521-47b3-8794-4b4ac2833def.png" id="5_wcg1l"]
 [ext_resource type="Texture2D" uid="uid://cn55e1qp1raci" path="res://Ivo/Sprites/FinalUI/ButtonCure_Pressed.png" id="6_021lk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0mqj"]
-shader = ExtResource("2_ve7wo")
-shader_parameter/direction = Vector2(1, 0)
-shader_parameter/speed = 0.2
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e6bmv")
@@ -22,12 +19,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PhoneMenuBG" type="Sprite2D" parent="MarginContainer"]
+[node name="BG" type="Sprite2D" parent="MarginContainer"]
+z_index = -6
 texture_repeat = 2
-material = SubResource("ShaderMaterial_o0mqj")
-position = Vector2(360, 640)
-scale = Vector2(11.25, 10)
-texture = ExtResource("3_t3yv1")
+position = Vector2(360, 474)
+texture = ExtResource("2_v2y1p")
+
+[node name="Counter" type="Sprite2D" parent="MarginContainer"]
+texture_repeat = 2
+position = Vector2(360, 474)
+texture = ExtResource("3_0bq4h")
+
+[node name="Clock" type="Sprite2D" parent="MarginContainer"]
+texture_repeat = 2
+position = Vector2(360, 474)
+texture = ExtResource("4_iusks")
+
+[node name="Prop" type="Sprite2D" parent="MarginContainer"]
+texture_repeat = 2
+position = Vector2(360, 474)
+texture = ExtResource("5_wcg1l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

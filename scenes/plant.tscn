@@ -62,34 +62,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="Animation" id="Animation_j2hpk"]
-resource_name = "dmg_flash"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:material:shader_parameter/tint")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_m6m1k"]
 length = 0.001
 tracks/0/type = "value"
@@ -133,6 +105,34 @@ tracks/0/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_j2hpk"]
+resource_name = "dmg_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:material:shader_parameter/tint")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6u3l8"]
 _data = {
 "RESET": SubResource("Animation_m6m1k"),
@@ -141,17 +141,20 @@ _data = {
 }
 
 [node name="Plant" type="Node2D"]
-position = Vector2(100, 185)
+position = Vector2(156, 787)
 script = ExtResource("1_0nd0k")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
 material = SubResource("ShaderMaterial_acswc")
+position = Vector2(-48, -105)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
 animation = &"onion_flies"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-47, -94)
 
 [node name="DmgFlashAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
