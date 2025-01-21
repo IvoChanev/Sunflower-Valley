@@ -369,6 +369,7 @@ position = Vector2(-1.96721, 130)
 texture = ExtResource("17_bklep")
 
 [node name="KillButton" type="Button" parent="."]
+visible = false
 offset_left = 571.0
 offset_top = 898.0
 offset_right = 647.0
@@ -376,6 +377,7 @@ offset_bottom = 929.0
 text = "Misscure Plant"
 
 [node name="HealButton" type="Button" parent="."]
+visible = false
 offset_left = 569.0
 offset_top = 943.0
 offset_right = 657.0
@@ -383,6 +385,7 @@ offset_bottom = 974.0
 text = "Heal Plant"
 
 [node name="EndDayButton" type="Button" parent="."]
+visible = false
 offset_left = 570.0
 offset_top = 1067.0
 offset_right = 641.0
