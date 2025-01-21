@@ -1,22 +1,40 @@
-[gd_scene load_steps=24 format=3 uid="uid://deddxw24gq17h"]
+[gd_scene load_steps=42 format=3 uid="uid://deddxw24gq17h"]
 
 [ext_resource type="Script" path="res://assets/scripts/plant.gd" id="1_0nd0k"]
 [ext_resource type="Shader" uid="uid://ce25l2m688dac" path="res://Ivo/dmg_flash.tres" id="2_8p32b"]
 [ext_resource type="Texture2D" uid="uid://dd6es8fbo3hh2" path="res://assets/art/plants/onion/onion_flies1.png" id="2_cecvr"]
 [ext_resource type="Texture2D" uid="uid://be1847kn3jyky" path="res://assets/art/plants/eggplant/eggplant_leafmold.png" id="3_4xvao"]
 [ext_resource type="Texture2D" uid="uid://qluu7slsxlxw" path="res://assets/art/plants/onion/onion_flies2.png" id="3_72mpf"]
+[ext_resource type="Texture2D" uid="uid://bjekr1fgvk3au" path="res://assets/art/plants/bean/Bean_BroadMites_1.png" id="3_nwc8g"]
 [ext_resource type="Texture2D" uid="uid://gqofoiwcpew1" path="res://assets/art/plants/onion/onion_flies3.png" id="4_1xsir"]
+[ext_resource type="Texture2D" uid="uid://d1fhs2b8my7h4" path="res://assets/art/plants/bean/Bean_BroadMites_2.png" id="4_chq2o"]
 [ext_resource type="Texture2D" uid="uid://bdfso2dlx5c4k" path="res://assets/art/plants/eggplant/eggplant_leafmold2.png" id="4_sep7h"]
 [ext_resource type="Texture2D" uid="uid://d34a4ya3ugi0" path="res://assets/art/plants/eggplant/eggplant_leafmold3.png" id="5_0ysme"]
+[ext_resource type="Texture2D" uid="uid://b004qhulvo8lt" path="res://assets/art/plants/bean/Bean_BroadMites_3.png" id="5_2si5i"]
 [ext_resource type="Texture2D" uid="uid://ciadtxwmsej1i" path="res://assets/art/plants/onion/onion_spiders1.png" id="5_orhh3"]
 [ext_resource type="Texture2D" uid="uid://d2etcee0loe6j" path="res://assets/art/plants/eggplant/eggplant_spidermites.png" id="6_8y4ji"]
+[ext_resource type="Texture2D" uid="uid://bi7ajq34yjjx0" path="res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_1.png" id="6_n1a23"]
 [ext_resource type="Texture2D" uid="uid://uo4ohpdcq0sy" path="res://assets/art/plants/onion/onion_spiders2.png" id="6_ses1p"]
 [ext_resource type="Texture2D" uid="uid://0mftoxfeojuc" path="res://assets/art/plants/eggplant/eggplant_spidermites2.png" id="7_6mg0x"]
+[ext_resource type="Texture2D" uid="uid://cuspwr0bcmlcf" path="res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_2.png" id="7_esbmn"]
 [ext_resource type="Texture2D" uid="uid://c76jb47tn107y" path="res://assets/art/plants/onion/onion_spiders3.png" id="7_yupyi"]
+[ext_resource type="Texture2D" uid="uid://bdqbc83hrj4r1" path="res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_3.png" id="8_8fvl2"]
 [ext_resource type="Texture2D" uid="uid://c0wh8dtamrt5u" path="res://assets/art/plants/eggplant/eggplant_spidermites3.png" id="8_het8h"]
 [ext_resource type="Texture2D" uid="uid://bjofr3omod5wf" path="res://assets/art/plants/onion/onion_worm1.png" id="8_ojerj"]
+[ext_resource type="Texture2D" uid="uid://bbctaug1ochwx" path="res://assets/art/plants/bean/Bean_Leafhoppers_1.png" id="9_8lvii"]
 [ext_resource type="Texture2D" uid="uid://ddbxj572i25kl" path="res://assets/art/plants/onion/onion_worm2.png" id="9_qcnpo"]
+[ext_resource type="Texture2D" uid="uid://e7fpmbn2xsny" path="res://assets/art/plants/bean/Bean_Leafhoppers_2.png" id="10_lxrcd"]
 [ext_resource type="Texture2D" uid="uid://dkllumikexut8" path="res://assets/art/plants/onion/onion_worm3.png" id="10_sradq"]
+[ext_resource type="Texture2D" uid="uid://d17fcfm64i7dw" path="res://assets/art/plants/bean/Bean_Leafhoppers_3.png" id="11_ppo26"]
+[ext_resource type="Texture2D" uid="uid://n57nd46qqo8g" path="res://assets/art/plants/potato/potatoLateBlight1.png" id="18_h26qx"]
+[ext_resource type="Texture2D" uid="uid://bmcluaf7lk8f2" path="res://assets/art/plants/potato/potatoLateBlight2.png" id="19_u4dqi"]
+[ext_resource type="Texture2D" uid="uid://cifr71cwmf2cw" path="res://assets/art/plants/potato/potatoLateBlight.png" id="20_78pgb"]
+[ext_resource type="Texture2D" uid="uid://be46yaliawyb7" path="res://assets/art/plants/potato/potatoleahopper1.png" id="21_vd1sa"]
+[ext_resource type="Texture2D" uid="uid://dawmsmn0yyobf" path="res://assets/art/plants/potato/potatoleahopper2.png" id="22_fofmq"]
+[ext_resource type="Texture2D" uid="uid://ckv5ycnwdb6h7" path="res://assets/art/plants/potato/potatoleahopper3.png" id="23_5dic4"]
+[ext_resource type="Texture2D" uid="uid://5jdkvmdtoyk1" path="res://assets/art/plants/potato/potatovirus1.png" id="24_ohktv"]
+[ext_resource type="Texture2D" uid="uid://i1wn3ke430ys" path="res://assets/art/plants/potato/potatovirus3.png" id="25_blwnm"]
+[ext_resource type="Texture2D" uid="uid://di61gaf7gsr2o" path="res://assets/art/plants/potato/potatovirus.png" id="26_8copt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_acswc"]
 shader = ExtResource("2_8p32b")
@@ -25,6 +43,48 @@ shader_parameter/tint = Color(1, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhhl6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nwc8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_chq2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2si5i")
+}],
+"loop": true,
+"name": &"bean_broadmites",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n1a23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_esbmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8fvl2")
+}],
+"loop": true,
+"name": &"bean_frogeyeleafspot",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8lvii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lxrcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ppo26")
+}],
+"loop": true,
+"name": &"bean_leafhoppers",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_4xvao")
@@ -37,7 +97,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"eggplant_leafmold",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -51,7 +111,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"eggplant_spidermites",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -93,6 +153,48 @@ animations = [{
 }],
 "loop": true,
 "name": &"onion_worms",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_h26qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u4dqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_78pgb")
+}],
+"loop": true,
+"name": &"potato_lateblight",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_vd1sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fofmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5dic4")
+}],
+"loop": true,
+"name": &"potato_leafhopper",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_ohktv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_blwnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8copt")
+}],
+"loop": true,
+"name": &"potato_virus",
 "speed": 3.0
 }]
 
@@ -185,7 +287,7 @@ material = SubResource("ShaderMaterial_acswc")
 position = Vector2(-48, -105)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
-animation = &"eggplant_spidermites"
+animation = &"bean_broadmites"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-47, -94)

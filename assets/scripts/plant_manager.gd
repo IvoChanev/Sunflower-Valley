@@ -32,6 +32,38 @@ var plant_data = {
 		},
 		"healthy" : "res://assets/art/plants/eggplant/eggplant_happy.png",
 		"dead" : "res://assets/art/plants/eggplant/eggplant_dead.png"
+	},
+	
+	"potato": {
+		"diseases": ["lateblight", "leafhopper", "virus"],
+		"sprites": {
+			"lateblight": "res://assets/art/plants/potato/potatoLateBlightded.png",
+			"leafhopper": "res://assets/art/plants/potato/potatoleafhopper.png",
+			"virus": "res://assets/art/plants/potato/potatoleafhopper.png"
+		},
+		"detailed_sprites": {
+			"lateblight": "res://assets/art/plants/potato/potatoLateBlightded.png",
+			"leafhopper": "res://assets/art/plants/potato/potatoleafhopper.png",
+			"virus": "res://assets/art/plants/potato/potatoleafhopper.png"
+		},
+		"healthy": "res://assets/art/plants/potato/potatoxray.png",
+		"dead": "res://assets/art/plants/potato/potatoded.png"
+	},
+	
+	"bean": {
+		"diseases": ["broadmites", "frogeyeleafspot", "leafhoppers"],
+		"sprites": {
+			"broadmites": "res://assets/art/plants/bean/Bean_BroadMites_3.png",
+			"frogeyeleafspot": "res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_3.png",
+			"leafhoppers": "res://assets/art/plants/bean/Bean_Leafhoppers_3.png"
+		},
+		"detailed_sprites": {
+			"broadmites": "res://assets/art/plants/bean/Bean_BroadMites_3.png",
+			"frogeyeleafspot": "res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_3.png",
+			"leafhoppers": "res://assets/art/plants/bean/Bean_Leafhoppers_3.png"
+		},
+		"healthy": "res://assets/art/plants/bean/Bean_Healthy.png",
+		"dead": "res://assets/art/plants/bean/Bean_Dead.png"
 	}
 }
 	
