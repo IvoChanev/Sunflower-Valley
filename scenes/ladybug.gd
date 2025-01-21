@@ -1,5 +1,5 @@
 extends Sprite2D
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+#@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Adjustable properties
@@ -11,7 +11,7 @@ func _input(event):
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if _is_mouse_over():
 				_on_sprite_clicked()
-				audio_stream_player_2d.play()
+				#audio_stream_player_2d.play()
 
 func _is_mouse_over() -> bool:
 	# Check if the mouse is over the sprite

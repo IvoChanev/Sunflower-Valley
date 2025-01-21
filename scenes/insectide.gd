@@ -4,6 +4,7 @@ extends Sprite2D
 
 # Adjustable properties
 @export var new_texture: Texture2D  # The texture to change to on click
+@export var room: Node
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -22,3 +23,11 @@ func _on_sprite_clicked():
 	if new_texture:
 		texture = new_texture
 		
+		if PlantManager.my_disease == "flies":
+			room.heal_button()
+		elif PlantManager.my_disease == "worms":
+			room.heal_button()
+		else:
+			room.kill_button()
+		
+			
