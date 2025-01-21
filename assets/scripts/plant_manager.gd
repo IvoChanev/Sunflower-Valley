@@ -64,6 +64,19 @@ var plant_data = {
 		},
 		"healthy": "res://assets/art/plants/bean/Bean_Healthy.png",
 		"dead": "res://assets/art/plants/bean/Bean_Dead.png"
+	},
+	"tomato": {
+		"diseases": ["broadmites", "cercospora"],
+		"broadmites": {
+			"broadmites": "res://assets/art/plants/bean/Bean_BroadMites_3.png",
+			"cercospora": "res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_3.png"
+		},
+		"detailed_sprites": {
+			"broadmites": "res://assets/art/plants/bean/Bean_BroadMites_3.png",
+			"cercospora": "res://assets/art/plants/bean/Bean_FrogEyeLeafSpot_3.png"
+		},
+		"healthy": "res://assets/art/plants/TOMATOOOOO/TOMATO_HEALTHY_00000.png",
+		"dead": "res://assets/art/plants/TOMATOOOOO/TOMATO_DEAD_00000.png"
 	}
 }
 	

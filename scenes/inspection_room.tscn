@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=44 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
@@ -21,7 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://06y05k75g5a" path="res://assets/art/cures/601f19df-9aea-4209-a520-fb9f960ec341.png" id="15_5deap"]
 [ext_resource type="Script" path="res://scenes/insectide.gd" id="16_3mhkt"]
 [ext_resource type="Script" path="res://Ivo/button_back.gd" id="17_0ky4r"]
+[ext_resource type="Texture2D" uid="uid://de6ueskuwcuyh" path="res://assets/art/plants/TOMATOOOOO/778355fd-5315-4886-9acb-d024896b325b.png" id="17_30okl"]
 [ext_resource type="Texture2D" uid="uid://cwbd6e80n4lnh" path="res://Ivo/5.png" id="17_bklep"]
+[ext_resource type="Script" path="res://scenes/scissors.gd" id="18_4r5d5"]
 [ext_resource type="PackedScene" uid="uid://tnb7gqcgy3cr" path="res://pepe/book.tscn" id="23_1qacf"]
 
 [sub_resource type="Animation" id="Animation_a6jf4"]
@@ -193,9 +195,6 @@ font_size = 70
 [node name="InspectionRoom" type="Node"]
 script = ExtResource("1_46b5i")
 
-[node name="book" parent="." instance=ExtResource("23_1qacf")]
-z_index = 5
-
 [node name="MarginContainer" type="MarginContainer" parent="." node_paths=PackedStringArray("hearts")]
 anchors_preset = 15
 anchor_right = 1.0
@@ -293,9 +292,16 @@ room = NodePath("../../../../../..")
 stream = ExtResource("7_nnxct")
 bus = &"SOUNDS"
 
-[node name="Sprite2D3" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+[node name="Scissors" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("room")]
 position = Vector2(648, 144)
-texture = ExtResource("7_vh0iu")
+texture = ExtResource("17_30okl")
+script = ExtResource("18_4r5d5")
+new_texture = ExtResource("17_30okl")
+room = NodePath("../../../../../..")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer/Scissors"]
+stream = ExtResource("7_nnxct")
+bus = &"SOUNDS"
 
 [node name="Sprite2D4" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
 position = Vector2(874, 144)
@@ -400,6 +406,9 @@ offset_right = 547.0
 offset_bottom = 373.0
 label_settings = SubResource("LabelSettings_ys8q5")
 horizontal_alignment = 2
+
+[node name="book" parent="." instance=ExtResource("23_1qacf")]
+z_index = 5
 
 [connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
