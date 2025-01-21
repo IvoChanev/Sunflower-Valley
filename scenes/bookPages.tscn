@@ -1,27 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqtsiwtkw1hm1"]
+[gd_scene load_steps=23 format=3 uid="uid://cqtsiwtkw1hm1"]
 
-[ext_resource type="Texture2D" uid="uid://bmwkdg6lwpxjt" path="res://pepe/potato/pot.png" id="1_ncwml"]
+[ext_resource type="Texture2D" uid="uid://dbr34vgfflya2" path="res://pepe/bg.png" id="1_r3rrj"]
 [ext_resource type="Texture2D" uid="uid://duymnijs643pk" path="res://pepe/leaves for book/black leaf mold.png" id="2_5tub8"]
+[ext_resource type="Texture2D" uid="uid://b0kgkk8l5ykgt" path="res://pepe/leaves for book/early blightLeave.png" id="2_684hk"]
 [ext_resource type="Texture2D" uid="uid://bdgbatd08ay6y" path="res://pepe/leaves for book/broad mite.png" id="3_kyxim"]
+[ext_resource type="Texture2D" uid="uid://bruv5b12o3huc" path="res://pepe/leaves for book/late blight Leave.png" id="4_ketdr"]
 [ext_resource type="Texture2D" uid="uid://d2ybemvqhikle" path="res://pepe/leaves for book/cercospora.png" id="4_lngwm"]
-[ext_resource type="Script" path="res://scenes/leaf1.gd" id="5_10d7n"]
-[ext_resource type="Texture2D" uid="uid://4wmp3of2atf5" path="res://pepe/leaves for book/late blight development.png" id="6_8imo5"]
+[ext_resource type="Texture2D" uid="uid://b3gynjb4sm7i1" path="res://pepe/leaves for book/gummy blight.png" id="5_1t3hs"]
+[ext_resource type="Script" path="res://scenes/list.gd" id="6_8gmb8"]
+[ext_resource type="Script" path="res://scenes/goback.gd" id="6_n1ir5"]
 [ext_resource type="Script" path="res://scenes/switchToList.gd" id="7_rx1jp"]
+[ext_resource type="Texture2D" uid="uid://dv0pv1xgjmodo" path="res://pepe/leaves for book/infected.png" id="8_qqhyp"]
+[ext_resource type="Texture2D" uid="uid://c5cc42suaquoh" path="res://pepe/leaves for book/veinal chlorosis.png" id="9_q78ll"]
+[ext_resource type="Texture2D" uid="uid://d4d4qbu3cmqkg" path="res://pepe/leaves for book/marginal chlorosis.png" id="10_0eebu"]
+[ext_resource type="Texture2D" uid="uid://c0jb1q7xnmanc" path="res://pepe/leaves for book/mosaic.png" id="11_mnoj4"]
+[ext_resource type="Texture2D" uid="uid://da5v5st7oybmx" path="res://pepe/leaves for book/mottling.png" id="12_ti2j4"]
+[ext_resource type="Texture2D" uid="uid://cfxemftp6c7e0" path="res://pepe/leaves for book/blistering.png" id="13_04ejn"]
+[ext_resource type="Texture2D" uid="uid://dkdnfekc3glkk" path="res://pepe/leaves for book/curling.png" id="14_fb53o"]
+[ext_resource type="Texture2D" uid="uid://32vhtbgev3xp" path="res://pepe/leaves for book/red spider mite.png" id="15_du6vu"]
+[ext_resource type="Texture2D" uid="uid://05ephvln5kfu" path="res://pepe/leaves for book/white fly.png" id="17_81yjs"]
+[ext_resource type="Texture2D" uid="uid://ypqmivochbwx" path="res://pepe/leaves for book/bugsAndStuff/cutwormGreen.png" id="18_vgmi3"]
+[ext_resource type="Texture2D" uid="uid://c5bacgn0pme8a" path="res://pepe/leaves for book/bugsAndStuff/cutworm.png" id="19_n5njv"]
+[ext_resource type="Texture2D" uid="uid://41yknsgwxcy0" path="res://pepe/leaves for book/bugsAndStuff/leafhopper.png" id="20_o5lwc"]
 
 [node name="bookPages" type="Sprite2D"]
-position = Vector2(965, 652)
-texture = ExtResource("1_ncwml")
+modulate = Color(1, 1, 0.745098, 1)
+position = Vector2(405, 659)
+scale = Vector2(1.29297, 1.73177)
+texture = ExtResource("1_r3rrj")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -239.0
-offset_top = -435.0
-offset_right = -239.0
-offset_bottom = -435.0
+offset_left = -256.0
+offset_top = -384.0
+offset_right = -256.0
+offset_bottom = -384.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Fungi" type="VBoxContainer" parent="ScrollContainer"]
 visible = false
@@ -29,95 +48,215 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/Fungi" node_paths=PackedStringArray("page1", "page2", "book")]
+[node name="earlyBlight" type="TextureButton" parent="ScrollContainer/Fungi" node_paths=PackedStringArray("page1", "page2", "book")]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_8imo5")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("2_684hk")
 script = ExtResource("7_rx1jp")
 page1 = NodePath("..")
 page2 = NodePath("../../List")
 book = NodePath("../..")
 
-[node name="TextureButton3" type="TextureButton" parent="ScrollContainer/Fungi"]
+[node name="LateBlight" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_8imo5")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("4_ketdr")
 
-[node name="TextureButton4" type="TextureButton" parent="ScrollContainer/Fungi"]
+[node name="GummyBlight" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_8imo5")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("5_1t3hs")
 
-[node name="TextureButton5" type="TextureButton" parent="ScrollContainer/Fungi"]
+[node name="blackleafMold" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_8imo5")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("2_5tub8")
 
-[node name="TextureButton6" type="TextureButton" parent="ScrollContainer/Fungi"]
+[node name="cercospora" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_8imo5")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("4_lngwm")
 
-[node name="List" type="VBoxContainer" parent="ScrollContainer"]
+[node name="goback" type="Button" parent="ScrollContainer/Fungi" node_paths=PackedStringArray("page1", "page2", "book")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+script = ExtResource("6_n1ir5")
+page1 = NodePath("..")
+page2 = NodePath("../../List")
+book = NodePath("../..")
+
+[node name="Viruses" type="VBoxContainer" parent="ScrollContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton" type="TextureButton" parent="ScrollContainer/List" node_paths=PackedStringArray("page1", "page2", "book")]
+[node name="infection" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_5tub8")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
-script = ExtResource("5_10d7n")
+texture_normal = ExtResource("8_qqhyp")
+
+[node name="veinalChlorosis" type="TextureButton" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("9_q78ll")
+
+[node name="marginalChlorosis" type="TextureButton" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("10_0eebu")
+
+[node name="mosaic" type="TextureButton" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("11_mnoj4")
+
+[node name="mottling" type="TextureButton" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("12_ti2j4")
+
+[node name="blistering" type="TextureButton" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("13_04ejn")
+
+[node name="curling" type="TextureButton" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("14_fb53o")
+
+[node name="goback" type="Button" parent="ScrollContainer/Viruses" node_paths=PackedStringArray("page1", "page2", "book")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+script = ExtResource("6_n1ir5")
 page1 = NodePath("..")
-page2 = NodePath("../../Fungi")
+page2 = NodePath("../../List")
 book = NodePath("../..")
 
-[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/List"]
+[node name="spiders and insects" type="VBoxContainer" parent="ScrollContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="spiders" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Spiders"
+horizontal_alignment = 1
+
+[node name="red spider mite" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_5tub8")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("15_du6vu")
 
-[node name="TextureButton3" type="TextureButton" parent="ScrollContainer/List"]
+[node name="broad mite" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_5tub8")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("3_kyxim")
 
-[node name="TextureButton4" type="TextureButton" parent="ScrollContainer/List"]
+[node name="Insects" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Insects"
+horizontal_alignment = 1
+
+[node name="whiteFlu" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_5tub8")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("17_81yjs")
 
-[node name="TextureButton5" type="TextureButton" parent="ScrollContainer/List"]
+[node name="cutwormGreen" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_5tub8")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("18_vgmi3")
 
-[node name="TextureButton6" type="TextureButton" parent="ScrollContainer/List"]
+[node name="cutworm2" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_5tub8")
-texture_pressed = ExtResource("3_kyxim")
-texture_hover = ExtResource("4_lngwm")
+texture_normal = ExtResource("19_n5njv")
 
-[connection signal="pressed" from="ScrollContainer/Fungi/TextureButton2" to="ScrollContainer/Fungi/TextureButton2" method="_on_pressed"]
-[connection signal="pressed" from="ScrollContainer/List/TextureButton" to="ScrollContainer/List/TextureButton" method="_on_pressed"]
+[node name="Leafhopper" type="TextureButton" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("20_o5lwc")
+
+[node name="goback" type="Button" parent="ScrollContainer/spiders and insects" node_paths=PackedStringArray("page1", "page2", "book")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+script = ExtResource("6_n1ir5")
+page1 = NodePath("..")
+page2 = NodePath("../../List")
+book = NodePath("../..")
+
+[node name="Bacteria" type="VBoxContainer" parent="ScrollContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="ScrollContainer/Bacteria"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 71
+text = "Locked"
+horizontal_alignment = 1
+
+[node name="goback" type="Button" parent="ScrollContainer/Bacteria" node_paths=PackedStringArray("page1", "page2", "book")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+script = ExtResource("6_n1ir5")
+page1 = NodePath("..")
+page2 = NodePath("../../List")
+book = NodePath("../..")
+
+[node name="List" type="VBoxContainer" parent="ScrollContainer" node_paths=PackedStringArray("page1", "page2", "page3", "page4", "list", "book")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 100
+script = ExtResource("6_8gmb8")
+page1 = NodePath("../Fungi")
+page2 = NodePath("../Viruses")
+page3 = NodePath("../Bacteria")
+page4 = NodePath("../spiders and insects")
+list = NodePath(".")
+book = NodePath("..")
+
+[node name="Fungal Diseases" type="Button" parent="ScrollContainer/List"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Fungal Diseases"
+
+[node name="Viral Diseases" type="Button" parent="ScrollContainer/List"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Viral Diseases"
+
+[node name="Bacterial Diseases" type="Button" parent="ScrollContainer/List"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Bacterial Diseases"
+
+[node name="Arachnids & Insects" type="Button" parent="ScrollContainer/List"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Arachnids & Insects"
+
+[connection signal="pressed" from="ScrollContainer/Fungi/earlyBlight" to="ScrollContainer/Fungi/earlyBlight" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/Fungi/goback" to="ScrollContainer/Fungi/goback" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/Viruses/goback" to="ScrollContainer/Viruses/goback" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/spiders and insects/goback" to="ScrollContainer/spiders and insects/goback" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/Bacteria/goback" to="ScrollContainer/Bacteria/goback" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/List/Fungal Diseases" to="ScrollContainer/List" method="_on_fungal_diseases_pressed"]
+[connection signal="pressed" from="ScrollContainer/List/Viral Diseases" to="ScrollContainer/List" method="_on_viral_diseases_pressed"]
+[connection signal="pressed" from="ScrollContainer/List/Bacterial Diseases" to="ScrollContainer/List" method="_on_bacterial_diseases_pressed"]
+[connection signal="pressed" from="ScrollContainer/List/Arachnids & Insects" to="ScrollContainer/List" method="_on_arachnids__insects_pressed"]
