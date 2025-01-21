@@ -397,7 +397,7 @@ horizontal_alignment = 2
 
 [node name="book" parent="." instance=ExtResource("23_1qacf")]
 z_index = 5
-target_position = Vector2(370, 0)
+target_position = Vector2(0, 0)
 
 [connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]

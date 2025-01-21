@@ -18,7 +18,8 @@ func _ready():
 	set_process(true)
 
 func _process(delta: float) -> void:
-	_go_there(delta)
+	#_go_there(delta)
+	return
 
 func _go_there(delta):
 	if is_sliding and slided == false:
