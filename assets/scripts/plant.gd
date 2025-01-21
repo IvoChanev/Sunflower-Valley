@@ -49,6 +49,7 @@ func take_damage():
 	dmg_flash_anim_player.play("dmg_flash")
 	
 func mark_as_killed():
+	
 	var dead_sprite_path = PlantManager.get_dead_sprite(plant_type)
 	if dead_sprite_path != "":
 		set_sprite(dead_sprite_path)

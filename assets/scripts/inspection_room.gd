@@ -46,29 +46,36 @@ func _on_kill_button_pressed() -> void:
 		PlantManager.plant_died()
 		
 		PlantManager.plant_moved_to_main_room()
-		PlantManager.killed_plants_count += 1
+		
 		$Plant.mark_as_killed()
 		
 		heart_system.plant_dead()
 		
 func kill_button():
 	var heart_system = get_node("MarginContainer") #Referencing the heart system script
-	if heart_system.health > 1:
-		heart_system.lose_health()
-		
-		$Plant.take_damage()
+	if PlantManager.plants_treated == 3:
+		on_end_day_button_pressed()
 	else:
-		heart_system.lose_health()
 		
-		$Plant.take_damage()
-		
-		PlantManager.plant_died()
-		
-		PlantManager.plant_moved_to_main_room()
-		PlantManager.killed_plants_count += 1
-		$Plant.mark_as_killed()
-		
-		heart_system.plant_dead()
+		if heart_system.health > 1:
+			heart_system.lose_health()
+			
+			$Plant.take_damage()
+		else:
+			
+			heart_system.lose_health()
+			
+			$Plant.take_damage()
+			
+			PlantManager.plant_died()
+			
+			
+			
+			PlantManager.plant_moved_to_main_room()
+			PlantManager.killed_plants_count += 1
+			$Plant.mark_as_killed()
+			heart_system.plant_dead()
+			PlantManager.plants_treated +=1
 
 # Heal the current plant
 func _on_heal_button_pressed() -> void: 
@@ -83,21 +90,39 @@ func _on_heal_button_pressed() -> void:
 	PlantManager.healed_plants_count += 1 #Code for curing the plant
 	$Plant.mark_as_healed()
 	
+	
+	
+	
 func heal_button(): 
-	
-	var heart_system = get_node("MarginContainer") #Referencing the heart system script
-	heart_system.plant_healed()
-	
-	PlantManager.plant_healed()
-	
-	PlantManager.plant_moved_to_main_room()
-	
-	PlantManager.healed_plants_count += 1 #Code for curing the plant
-	$Plant.mark_as_healed()
+	if PlantManager.plants_treated == 3:
+		on_end_day_button_pressed()
+	else:
+		
+		var heart_system = get_node("MarginContainer") #Referencing the heart system script
+		heart_system.plant_healed()
+		
+		PlantManager.plant_healed()
+		
+		PlantManager.plant_moved_to_main_room()
+		
+		PlantManager.healed_plants_count += 1 #Code for curing the plant
+		$Plant.mark_as_healed()
+		PlantManager.plants_treated +=1
 
 	
 # End the day 
 func _on_end_day_button_pressed() -> void:
+	
+	var oldButtonBack = $MarginContainer/VBoxContainer/ButtonBackOld
+	oldButtonBack.queue_free()
+	
+	var buttonDrawer = $MarginContainer/VBoxContainer/Drawer/ButtonDrawer
+	buttonDrawer.queue_free()
+	
+	animation_player.play("move_down")
+	animation_player.connect("animation_finished", Callable(self, "_on_blinders_animation_finished"))
+	
+func on_end_day_button_pressed():
 	
 	var oldButtonBack = $MarginContainer/VBoxContainer/ButtonBackOld
 	oldButtonBack.queue_free()

@@ -88,6 +88,7 @@ var isHealed: bool = false;
 
 var healed_plants_count: int = 0
 var killed_plants_count: int = 0
+var plants_treated: int = 0
 
 #Reset counters for a new day
 func reset_counters():
