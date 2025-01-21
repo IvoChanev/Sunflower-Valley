@@ -38,6 +38,8 @@ func reset_counters():
 func reset_plant():
 	isDead = false;
 	isHealed = false;
+	current_plant_and_disease = null  # Reset for the next spawn
+
 	
 var my_disease
 
@@ -98,6 +100,10 @@ func plant_moved_to_main_room():
 	
 func plant_died():
 	isDead = true;
+	reset_plant()
 	
 func plant_healed():
 	isHealed = true;
+	reset_plant()
+
+	
