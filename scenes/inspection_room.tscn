@@ -277,12 +277,13 @@ room = NodePath("../../../../../..")
 stream = ExtResource("7_nnxct")
 bus = &"SOUNDS"
 
-[node name="Insectide" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+[node name="Insectide" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("room")]
 position = Vector2(413, 144)
 scale = Vector2(0.839995, 0.839995)
 texture = ExtResource("15_5deap")
 script = ExtResource("16_3mhkt")
 new_texture = ExtResource("15_5deap")
+room = NodePath("../../../../../..")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer/Insectide"]
 stream = ExtResource("7_nnxct")
