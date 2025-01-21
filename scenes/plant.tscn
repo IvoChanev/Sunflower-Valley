@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://deddxw24gq17h"]
+[gd_scene load_steps=42 format=3 uid="uid://deddxw24gq17h"]
 
 [ext_resource type="Script" path="res://assets/scripts/plant.gd" id="1_0nd0k"]
 [ext_resource type="Shader" uid="uid://ce25l2m688dac" path="res://Ivo/dmg_flash.tres" id="2_8p32b"]
@@ -35,12 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://5jdkvmdtoyk1" path="res://assets/art/plants/potato/potatovirus1.png" id="24_ohktv"]
 [ext_resource type="Texture2D" uid="uid://i1wn3ke430ys" path="res://assets/art/plants/potato/potatovirus3.png" id="25_blwnm"]
 [ext_resource type="Texture2D" uid="uid://di61gaf7gsr2o" path="res://assets/art/plants/potato/potatovirus.png" id="26_8copt"]
-[ext_resource type="Texture2D" uid="uid://de2l1vh6ytw5h" path="res://assets/art/plants/tomato/TOMATO_SICK_BROAD_MITE_00000.png" id="36_6thc6"]
-[ext_resource type="Texture2D" uid="uid://j2top1wpwp0g" path="res://assets/art/plants/tomato/TOMATO_SICK_BROAD_MITE_00001.png" id="37_y8c3o"]
-[ext_resource type="Texture2D" uid="uid://brqe2rq3tsib" path="res://assets/art/plants/tomato/TOMATO_SICK_BROAD_MITE_00002.png" id="38_w2jpy"]
-[ext_resource type="Texture2D" uid="uid://bkju1e1xyev8i" path="res://assets/art/plants/tomato/TOMATO_CERCOSPORA_2.png" id="39_qhc6n"]
-[ext_resource type="Texture2D" uid="uid://dbg3jonp4en6u" path="res://assets/art/plants/tomato/TOMATO_SICK_CERCOSPORA_00000.png" id="40_o27bl"]
-[ext_resource type="Texture2D" uid="uid://d1rrbe80sco2g" path="res://assets/art/plants/tomato/TOMATO_SICK_CERCOSPORA_00001.png" id="41_rsmcd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_acswc"]
 shader = ExtResource("2_8p32b")
@@ -202,34 +196,6 @@ animations = [{
 "loop": true,
 "name": &"potato_virus",
 "speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("36_6thc6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_y8c3o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_w2jpy")
-}],
-"loop": true,
-"name": &"tomato_broadmites",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("39_qhc6n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_o27bl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_rsmcd")
-}],
-"loop": true,
-"name": &"tomato_cercospo",
-"speed": 3.0
 }]
 
 [sub_resource type="Animation" id="Animation_m6m1k"]
@@ -321,7 +287,7 @@ material = SubResource("ShaderMaterial_acswc")
 position = Vector2(-48, -105)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
-animation = &"tomato_broadmites"
+animation = &"bean_broadmites"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-47, -94)
