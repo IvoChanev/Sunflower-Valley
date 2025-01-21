@@ -9,6 +9,7 @@ extends Sprite2D
 
 @onready var anim_player = $AnimationPlayer
 
+
 var isDrawerOpen: bool = false;
 
 func go_up():
@@ -46,7 +47,9 @@ func _on_sprite_clicked():
 		if isDrawerOpen == false:
 			go_up()
 			isDrawerOpen = true;
+			PlantManager.canBeUsed = false;
 		elif isDrawerOpen == true:
 			go_down()
 			isDrawerOpen = false
+			PlantManager.canBeUsed = true;
 		
