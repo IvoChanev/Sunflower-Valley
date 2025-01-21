@@ -41,7 +41,7 @@ func _is_mouse_over() -> bool:
 
 func _on_sprite_clicked():
 	# Change the texture when clicked
-	if new_texture:
+	if new_texture and PlantManager.canBeUsed == true:
 		texture = new_texture
 		if isDrawerOpen == false:
 			go_up()
