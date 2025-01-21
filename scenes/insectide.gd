@@ -27,6 +27,8 @@ func _on_sprite_clicked():
 			room.heal_button()
 		elif PlantManager.my_disease == "worms":
 			room.heal_button()
+		elif PlantManager.my_disease == "leafhopper":
+			room.heal_button()
 		else:
 			room.kill_button()
 		
