@@ -1,13 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://deddxw24gq17h"]
+[gd_scene load_steps=24 format=3 uid="uid://deddxw24gq17h"]
 
 [ext_resource type="Script" path="res://assets/scripts/plant.gd" id="1_0nd0k"]
 [ext_resource type="Shader" uid="uid://ce25l2m688dac" path="res://Ivo/dmg_flash.tres" id="2_8p32b"]
 [ext_resource type="Texture2D" uid="uid://dd6es8fbo3hh2" path="res://assets/art/plants/onion/onion_flies1.png" id="2_cecvr"]
+[ext_resource type="Texture2D" uid="uid://be1847kn3jyky" path="res://assets/art/plants/eggplant/eggplant_leafmold.png" id="3_4xvao"]
 [ext_resource type="Texture2D" uid="uid://qluu7slsxlxw" path="res://assets/art/plants/onion/onion_flies2.png" id="3_72mpf"]
 [ext_resource type="Texture2D" uid="uid://gqofoiwcpew1" path="res://assets/art/plants/onion/onion_flies3.png" id="4_1xsir"]
+[ext_resource type="Texture2D" uid="uid://bdfso2dlx5c4k" path="res://assets/art/plants/eggplant/eggplant_leafmold2.png" id="4_sep7h"]
+[ext_resource type="Texture2D" uid="uid://d34a4ya3ugi0" path="res://assets/art/plants/eggplant/eggplant_leafmold3.png" id="5_0ysme"]
 [ext_resource type="Texture2D" uid="uid://ciadtxwmsej1i" path="res://assets/art/plants/onion/onion_spiders1.png" id="5_orhh3"]
+[ext_resource type="Texture2D" uid="uid://d2etcee0loe6j" path="res://assets/art/plants/eggplant/eggplant_spidermites.png" id="6_8y4ji"]
 [ext_resource type="Texture2D" uid="uid://uo4ohpdcq0sy" path="res://assets/art/plants/onion/onion_spiders2.png" id="6_ses1p"]
+[ext_resource type="Texture2D" uid="uid://0mftoxfeojuc" path="res://assets/art/plants/eggplant/eggplant_spidermites2.png" id="7_6mg0x"]
 [ext_resource type="Texture2D" uid="uid://c76jb47tn107y" path="res://assets/art/plants/onion/onion_spiders3.png" id="7_yupyi"]
+[ext_resource type="Texture2D" uid="uid://c0wh8dtamrt5u" path="res://assets/art/plants/eggplant/eggplant_spidermites3.png" id="8_het8h"]
 [ext_resource type="Texture2D" uid="uid://bjofr3omod5wf" path="res://assets/art/plants/onion/onion_worm1.png" id="8_ojerj"]
 [ext_resource type="Texture2D" uid="uid://ddbxj572i25kl" path="res://assets/art/plants/onion/onion_worm2.png" id="9_qcnpo"]
 [ext_resource type="Texture2D" uid="uid://dkllumikexut8" path="res://assets/art/plants/onion/onion_worm3.png" id="10_sradq"]
@@ -19,6 +25,34 @@ shader_parameter/tint = Color(1, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhhl6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4xvao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sep7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ysme")
+}],
+"loop": true,
+"name": &"eggplant_leafmold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8y4ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6mg0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_het8h")
+}],
+"loop": true,
+"name": &"eggplant_spidermites",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_cecvr")
@@ -151,7 +185,7 @@ material = SubResource("ShaderMaterial_acswc")
 position = Vector2(-48, -105)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qhhl6")
-animation = &"onion_flies"
+animation = &"eggplant_spidermites"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-47, -94)

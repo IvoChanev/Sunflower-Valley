@@ -18,6 +18,20 @@ var plant_data = {
 		},
 		"healthy" : "res://assets/art/plants/onion/onion_happy.png",
 		"dead" : "res://assets/art/plants/onion/onion_dead.png"
+	},
+	
+	"eggplant": {
+		"diseases": ["leafmold", "spidermites"],
+		"sprites": {
+			"leafmold": "res://assets/art/plants/eggplant/eggplant_leafmold.png",
+			"spidermites": "res://assets/art/plants/eggplant/eggplant_spidermites.png"
+		},
+		"detailed_sprites": {
+			"leafmold": "res://assets/art/disease/onion/spiders_detail.png",
+			"spidermites": "res://assets/art/disease/onion/worms_detail.png"
+		},
+		"healthy" : "res://assets/art/plants/eggplant/eggplant_happy.png",
+		"dead" : "res://assets/art/plants/eggplant/eggplant_dead.png"
 	}
 }
 	
