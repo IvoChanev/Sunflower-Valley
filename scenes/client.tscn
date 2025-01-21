@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1m6asf5y4c25"]
+[gd_scene load_steps=7 format=3 uid="uid://b1m6asf5y4c25"]
 
 [ext_resource type="Script" path="res://assets/scripts/client.gd" id="1_i2sfa"]
 [ext_resource type="Texture2D" uid="uid://cph8qjwjqqfta" path="res://assets/art/client/test_client_walk_fwd.png" id="2_8bjaq"]
 [ext_resource type="Texture2D" uid="uid://bkg401k167x2n" path="res://assets/art/client/test_client_walk_back.png" id="3_cdjom"]
+[ext_resource type="Texture2D" uid="uid://dwqul7gv7hri5" path="res://assets/art/client/96a5e111-2324-43d2-ab46-07661acbb782.png" id="3_h68xb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sg467"]
 animations = [{
@@ -16,11 +17,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_h68xb")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_8bjaq")
 }],
 "loop": true,
 "name": &"walk_forward",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrke3"]
@@ -36,8 +40,8 @@ metadata/_edit_group_ = true
 z_index = -5
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_sg467")
-animation = &"walk_back"
-frame_progress = 0.0468567
+animation = &"walk_forward"
+frame_progress = 0.0759458
 
 [node name="Area2D" type="Area2D" parent="."]
 

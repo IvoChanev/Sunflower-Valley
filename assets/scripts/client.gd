@@ -13,7 +13,7 @@ func _ready():
 	$AnimatedSprite2D.animation = "walk_forward"
 	
 	# Initialize the target position (can be any Vector2 value)
-	target_position = Vector2(200, 750)
+	target_position = Vector2(200, 550)
 	
 	assign_plant_and_disease()
 	

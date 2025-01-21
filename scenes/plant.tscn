@@ -147,7 +147,6 @@ script = ExtResource("1_0nd0k")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 5
 material = SubResource("ShaderMaterial_acswc")
 position = Vector2(-48, -105)
 scale = Vector2(0.2, 0.2)

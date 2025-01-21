@@ -38,6 +38,8 @@ func reset_counters():
 func reset_plant():
 	isDead = false;
 	isHealed = false;
+	
+var my_disease
 
 #Choose a random plant and a random disease
 func get_random_plant_and_disease() -> Dictionary:
@@ -47,6 +49,9 @@ func get_random_plant_and_disease() -> Dictionary:
 		var random_plant = plants[randi() % plants.size()]
 		var diseases = plant_data[random_plant]["diseases"]
 		var random_disease = diseases[randi() % diseases.size()]
+		
+		my_disease = random_disease
+		
 		current_plant_and_disease = {
 			"plant": random_plant,
 			"disease": random_disease

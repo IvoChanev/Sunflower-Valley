@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=41 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
@@ -16,6 +16,12 @@
 [ext_resource type="Script" path="res://scenes/button_drawer.gd" id="10_mojbh"]
 [ext_resource type="Texture2D" uid="uid://bik7ia05c1s2f" path="res://Ivo/Sprites/FinalUI/ButtonDrawer_Pressed.png" id="11_4f6ag"]
 [ext_resource type="AudioStream" uid="uid://cedj10vnt2bpe" path="res://AARON/AUDIO/SOUNDS/Open Toolbox.wav" id="12_ft1s3"]
+[ext_resource type="Texture2D" uid="uid://b8ofdpt21d06q" path="res://assets/art/cures/bf690dff-6df9-49ad-aca8-3ec2c301a053.png" id="13_tfdhl"]
+[ext_resource type="Script" path="res://scenes/ladybug.gd" id="14_njxk0"]
+[ext_resource type="Texture2D" uid="uid://06y05k75g5a" path="res://assets/art/cures/601f19df-9aea-4209-a520-fb9f960ec341.png" id="15_5deap"]
+[ext_resource type="Script" path="res://scenes/insectide.gd" id="16_3mhkt"]
+[ext_resource type="Script" path="res://Ivo/button_back.gd" id="17_0ky4r"]
+[ext_resource type="Texture2D" uid="uid://cwbd6e80n4lnh" path="res://Ivo/5.png" id="17_bklep"]
 
 [sub_resource type="Animation" id="Animation_a6jf4"]
 length = 0.001
@@ -180,6 +186,9 @@ _data = {
 "move_down": SubResource("Animation_3aog7")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_ys8q5"]
+font_size = 70
+
 [node name="InspectionRoom" type="Node"]
 script = ExtResource("1_46b5i")
 
@@ -199,18 +208,19 @@ position = Vector2(360, 480)
 texture = ExtResource("3_v526m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 
-[node name="ButtonBack" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+[node name="ButtonBackOld" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
 position = Vector2(3.81468e-06, -328)
 texture = ExtResource("4_yyelu")
 script = ExtResource("5_piejo")
 new_texture = ExtResource("6_3fvxc")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonBack"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/ButtonBackOld"]
 stream = ExtResource("7_nnxct")
 bus = &"SOUNDS"
 
@@ -255,13 +265,28 @@ custom_minimum_size = Vector2(1800, 290)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+[node name="Ladybug" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("room")]
 position = Vector2(165, 144)
-texture = ExtResource("7_vh0iu")
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("13_tfdhl")
+script = ExtResource("14_njxk0")
+new_texture = ExtResource("13_tfdhl")
+room = NodePath("../../../../../..")
 
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer/Ladybug"]
+stream = ExtResource("7_nnxct")
+bus = &"SOUNDS"
+
+[node name="Insectide" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
 position = Vector2(413, 144)
-texture = ExtResource("7_vh0iu")
+scale = Vector2(0.839995, 0.839995)
+texture = ExtResource("15_5deap")
+script = ExtResource("16_3mhkt")
+new_texture = ExtResource("15_5deap")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer/Insectide"]
+stream = ExtResource("7_nnxct")
+bus = &"SOUNDS"
 
 [node name="Sprite2D3" type="Sprite2D" parent="MarginContainer/VBoxContainer/Drawer/ScrollContainer/VBoxContainer"]
 position = Vector2(648, 144)
@@ -313,6 +338,7 @@ sprite_frames = SubResource("SpriteFrames_edqdi")
 animation = &"health_deplete"
 
 [node name="Blinders" type="Sprite2D" parent="."]
+z_index = 6
 position = Vector2(359, -806)
 scale = Vector2(1.01667, 1)
 texture = ExtResource("2_buehu")
@@ -321,6 +347,21 @@ texture = ExtResource("2_buehu")
 libraries = {
 "": SubResource("AnimationLibrary_2fgtc")
 }
+
+[node name="ButtonBack" type="Sprite2D" parent="Blinders"]
+z_index = 5
+position = Vector2(3.81468e-06, -313)
+texture = ExtResource("4_yyelu")
+script = ExtResource("17_0ky4r")
+new_texture = ExtResource("6_3fvxc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Blinders/ButtonBack"]
+stream = ExtResource("7_nnxct")
+bus = &"SOUNDS"
+
+[node name="Sprite2D" type="Sprite2D" parent="Blinders"]
+position = Vector2(-1.96721, 130)
+texture = ExtResource("17_bklep")
 
 [node name="KillButton" type="Button" parent="."]
 offset_left = 571.0
@@ -344,10 +385,13 @@ offset_bottom = 1098.0
 text = "End Day"
 
 [node name="SummaryLabel" type="Label" parent="."]
-offset_left = 333.0
-offset_top = 346.0
-offset_right = 373.0
-offset_bottom = 369.0
+z_index = 7
+offset_left = 507.0
+offset_top = 350.0
+offset_right = 547.0
+offset_bottom = 373.0
+label_settings = SubResource("LabelSettings_ys8q5")
+horizontal_alignment = 2
 
 [connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]

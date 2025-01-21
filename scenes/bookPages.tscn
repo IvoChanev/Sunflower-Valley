@@ -74,6 +74,7 @@ texture_hover = ExtResource("4_lngwm")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer"]
 visible = false
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
