@@ -25,8 +25,8 @@
 
 [node name="bookPages" type="Sprite2D"]
 modulate = Color(1, 1, 0.745098, 1)
-position = Vector2(405, 659)
-scale = Vector2(1.29297, 1.73177)
+position = Vector2(393.801, 636.5)
+scale = Vector2(1.24922, 1.67318)
 texture = ExtResource("1_r3rrj")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -58,20 +58,48 @@ page1 = NodePath("..")
 page2 = NodePath("../../List")
 book = NodePath("../..")
 
+[node name="Label" type="Label" parent="ScrollContainer/Fungi"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Early Blight - cut plant"
+horizontal_alignment = 1
+
 [node name="LateBlight" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("4_ketdr")
+
+[node name="Label2" type="Label" parent="ScrollContainer/Fungi"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Late Blight - cut plant"
+horizontal_alignment = 1
 
 [node name="GummyBlight" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_1t3hs")
 
+[node name="Label3" type="Label" parent="ScrollContainer/Fungi"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Gummy Blight - cut plant"
+horizontal_alignment = 1
+
 [node name="blackleafMold" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("2_5tub8")
+
+[node name="Label4" type="Label" parent="ScrollContainer/Fungi"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Blac Leaf Mold - cut plant"
+horizontal_alignment = 1
 
 [node name="cercospora" type="TextureButton" parent="ScrollContainer/Fungi"]
 layout_mode = 2
@@ -98,30 +126,76 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_qqhyp")
 
+[node name="Label5" type="Label" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Infection - cut plant"
+horizontal_alignment = 1
+
 [node name="veinalChlorosis" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("9_q78ll")
+
+[node name="Label6" type="Label" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Veinal Chlorosis - cut plant"
+horizontal_alignment = 1
 
 [node name="marginalChlorosis" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("10_0eebu")
 
+[node name="Label7" type="Label" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Marginal Chlorosis - cut plant"
+horizontal_alignment = 1
+
 [node name="mosaic" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("11_mnoj4")
+
+[node name="Label8" type="Label" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Mosaic - cut plant"
+horizontal_alignment = 1
 
 [node name="mottling" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("12_ti2j4")
 
+[node name="Label9" type="Label" parent="ScrollContainer/Viruses"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Mottling - cut plant"
+horizontal_alignment = 1
+
 [node name="blistering" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("13_04ejn")
+
+[node name="Label10" type="Label" parent="ScrollContainer/Viruses/blistering"]
+layout_mode = 2
+offset_left = -92.0
+offset_top = -64.0001
+offset_right = 412.0
+offset_bottom = -36.0001
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Blistering - cut plant"
+horizontal_alignment = 1
 
 [node name="curling" type="TextureButton" parent="ScrollContainer/Viruses"]
 layout_mode = 2
@@ -155,10 +229,24 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("15_du6vu")
 
+[node name="Label11" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Red Spider Mite - Ladybug"
+horizontal_alignment = 1
+
 [node name="broad mite" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("3_kyxim")
+
+[node name="Label12" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Broad Mite - Ladybug"
+horizontal_alignment = 1
 
 [node name="Insects" type="Label" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
@@ -172,20 +260,48 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("17_81yjs")
 
+[node name="Label13" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Whitefly - bioinsecticide"
+horizontal_alignment = 1
+
 [node name="cutwormGreen" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("18_vgmi3")
+
+[node name="Label14" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Common Cutworm - bioinsecticide"
+horizontal_alignment = 1
 
 [node name="cutworm2" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("19_n5njv")
 
+[node name="Label15" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Young Cutworm - bioinsecticide"
+horizontal_alignment = 1
+
 [node name="Leafhopper" type="TextureButton" parent="ScrollContainer/spiders and insects"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("20_o5lwc")
+
+[node name="Label16" type="Label" parent="ScrollContainer/spiders and insects"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Leafhopper - bioinsecticide"
+horizontal_alignment = 1
 
 [node name="goback" type="Button" parent="ScrollContainer/spiders and insects" node_paths=PackedStringArray("page1", "page2", "book")]
 layout_mode = 2
