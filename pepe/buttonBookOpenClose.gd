@@ -14,7 +14,7 @@ var isDrawerOpen: bool = false;
 func go_up():
 	if sprite:
 		#sprite.position = Vector2(0, 420)
-		anim_player.play("openBook")
+		anim_player.play("openbook")
 		#audio_stream_player_2d.play()
 	else:
 		print("Sprite2D not assigned!")

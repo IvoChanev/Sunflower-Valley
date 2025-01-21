@@ -8,6 +8,7 @@ var change_visibility: bool = false
 
 
 func _on_pressed() -> void:
+	get_tree().set_input_as_handled()
 	if page2:
 		page2.visible = true
 		book.move_child(page2, 0)

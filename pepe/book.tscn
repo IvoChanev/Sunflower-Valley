@@ -5,6 +5,45 @@
 [ext_resource type="PackedScene" uid="uid://cqtsiwtkw1hm1" path="res://scenes/bookPages.tscn" id="3_rvy83"]
 [ext_resource type="Script" path="res://pepe/buttonBookOpenClose.gd" id="4_1tn1b"]
 
+[sub_resource type="Animation" id="Animation_gq1iq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(372, 631)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-314.006, -315.862)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.387, 0.289)]
+}
+
 [sub_resource type="Animation" id="Animation_icxs5"]
 resource_name = "openbook"
 length = 0.5
@@ -20,23 +59,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(372, 631), Vector2(-323, 631)]
 }
-
-[sub_resource type="Animation" id="Animation_gq1iq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(372, 631)]
+"values": [Vector2(-314.779, -315.862), Vector2(-224.29, -315.862)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.387, 0.289), Vector2(-0.387, 0.289)]
 }
 
-[sub_resource type="Animation" id="Animation_vw0gc"]
+[sub_resource type="Animation" id="Animation_kvyvl"]
 resource_name = "closeBook"
 length = 0.5
 tracks/0/type = "value"
@@ -51,11 +99,35 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-323, 631), Vector2(372, 631)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-224.29, -315.862), Vector2(-315.553, -315.862)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.387, 0.289), Vector2(0.387, 0.289)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mj0x2"]
 _data = {
 "RESET": SubResource("Animation_gq1iq"),
-"closeBook": SubResource("Animation_vw0gc"),
+"closeBook": SubResource("Animation_kvyvl"),
 "openbook": SubResource("Animation_icxs5")
 }
 
@@ -67,8 +139,8 @@ script = ExtResource("1_8bame")
 position = Vector2(372, 631)
 
 [node name="bookImage" type="Sprite2D" parent="potato" node_paths=PackedStringArray("sprite")]
-position = Vector2(-313.232, -315.862)
-scale = Vector2(0.386707, 0.288722)
+position = Vector2(-314.006, -315.862)
+scale = Vector2(0.387, 0.289)
 texture = ExtResource("2_n84hm")
 script = ExtResource("4_1tn1b")
 new_texture = ExtResource("2_n84hm")
@@ -78,8 +150,3 @@ sprite = NodePath(".")
 libraries = {
 "": SubResource("AnimationLibrary_mj0x2")
 }
-
-[node name="bookImage2" type="Sprite2D" parent="potato"]
-position = Vector2(221.196, -315.862)
-scale = Vector2(0.386707, 0.288722)
-texture = ExtResource("2_n84hm")
