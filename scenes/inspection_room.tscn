@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://vbeytbbc4sbc"]
+[gd_scene load_steps=42 format=3 uid="uid://vbeytbbc4sbc"]
 
 [ext_resource type="Script" path="res://assets/scripts/inspection_room.gd" id="1_46b5i"]
 [ext_resource type="Texture2D" uid="uid://c4bafkerre8si" path="res://assets/art/environmental/blinders.png" id="2_buehu"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://scenes/insectide.gd" id="16_3mhkt"]
 [ext_resource type="Script" path="res://Ivo/button_back.gd" id="17_0ky4r"]
 [ext_resource type="Texture2D" uid="uid://cwbd6e80n4lnh" path="res://Ivo/5.png" id="17_bklep"]
+[ext_resource type="PackedScene" uid="uid://tnb7gqcgy3cr" path="res://pepe/book.tscn" id="23_1qacf"]
 
 [sub_resource type="Animation" id="Animation_a6jf4"]
 length = 0.001
@@ -393,6 +394,10 @@ offset_right = 547.0
 offset_bottom = 373.0
 label_settings = SubResource("LabelSettings_ys8q5")
 horizontal_alignment = 2
+
+[node name="book" parent="." instance=ExtResource("23_1qacf")]
+z_index = 5
+target_position = Vector2(370, 0)
 
 [connection signal="pressed" from="KillButton" to="." method="_on_kill_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]

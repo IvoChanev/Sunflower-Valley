@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://tnb7gqcgy3cr"]
 
 [ext_resource type="Script" path="res://book.gd" id="1_8bame"]
-[ext_resource type="Texture2D" uid="uid://dg6hmppcjeihm" path="res://icon.svg" id="2_7m6yx"]
+[ext_resource type="Texture2D" uid="uid://8xw2o75pveol" path="res://assets/art/cures/c0387bf3-44ff-423a-8dc7-779e2f8fdefe.png" id="2_n84hm"]
 [ext_resource type="PackedScene" uid="uid://cqtsiwtkw1hm1" path="res://scenes/bookPages.tscn" id="3_rvy83"]
 
 [node name="book" type="Node2D" node_paths=PackedStringArray("bookImage")]
@@ -10,9 +10,15 @@ script = ExtResource("1_8bame")
 target_position = Vector2(450, 0)
 bookImage = NodePath("potato")
 
-[node name="bookImage" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_7m6yx")
-
 [node name="potato" parent="." instance=ExtResource("3_rvy83")]
-position = Vector2(392, 615)
+position = Vector2(372, 631)
+
+[node name="bookImage" type="Sprite2D" parent="potato"]
+position = Vector2(-313.232, -315.862)
+scale = Vector2(0.386707, 0.288722)
+texture = ExtResource("2_n84hm")
+
+[node name="bookImage2" type="Sprite2D" parent="potato"]
+position = Vector2(221.196, -315.862)
+scale = Vector2(0.386707, 0.288722)
+texture = ExtResource("2_n84hm")
